@@ -4,7 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Condev-Element",
   description: "condev-ui",
-  base: "/condev-element/",
+  base: "/condev-ui/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
