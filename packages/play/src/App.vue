@@ -1,8 +1,7 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <cd-button></cd-button>
+  <cd-button type="primary" size="small">test</cd-button>
 </template>
 
 <style scoped>
