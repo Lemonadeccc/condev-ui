@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { ButtonProps, ButtonEmits, ButtonInstance } from "./types";
-import { ref, computed } from "vue";
+import { ref, computed, inject } from "vue";
 import { throttle } from "lodash-es";
+import { BUTTON_GROUP_CTX_KEY } from "./constants";
 import CdIcon from "../Icon/Icon.vue";
 
 defineOptions({
@@ -23,10 +24,24 @@ const iconStyle = computed(() => ({
   marginRight: slots.default ? "6px" : "0px",
 }));
 
+const ctx = inject(BUTTON_GROUP_CTX_KEY, void 0);
 const _ref = ref<HTMLButtonElement>();
+const size = computed(() => {
+  return ctx?.size ?? props?.size ?? "";
+});
+const type = computed(() => {
+  return ctx?.type ?? props?.type ?? "";
+});
+const disabled = computed(() => {
+  return ctx?.disabled || props?.disabled || false;
+});
 
 const handleBtnClick = (e: MouseEvent) => emits("click", e);
-const handleBtnClickThrottle = throttle(handleBtnClick, props.throttleDuration);
+const handleBtnClickThrottle = throttle(
+  handleBtnClick,
+  props.throttleDuration,
+  { trailing: false }
+);
 
 defineExpose<ButtonInstance>({
   ref: _ref,
@@ -68,12 +83,6 @@ defineExpose<ButtonInstance>({
       :icon="icon"
       :style="iconStyle"
       size="1x"
-    />
-    <cd-icon
-      :icon="icon"
-      size="1x"
-      :style="iconStyle"
-      v-if="icon && !loading"
     />
     <slot></slot>
   </component>
