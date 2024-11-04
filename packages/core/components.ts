@@ -1,4 +1,4 @@
-import { CdButton } from "@condev-element/components";
+import { CdButton, CdButtonGroup, CdIcon } from "@condev-element/components";
 import type { Plugin } from "vue";
 
-export default [CdButton] as Plugin[];
+export default [CdButton, CdButtonGroup, CdIcon] as Plugin[];

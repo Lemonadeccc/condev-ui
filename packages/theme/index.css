@@ -1,2 +1,77 @@
+@import "./reset.css";
 
-@import './reset.css'
+:root {
+  /* colors */
+  --cd-color-white: #ffffff;
+  --cd-color-black: #000000;
+  --colors: (
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
+  --cd-bg-color: #ffffff;
+  --cd-bg-color-page: #f2f3f5;
+  --cd-bg-color-overlay: #ffffff;
+  --cd-text-color-primary: #303133;
+  --cd-text-color-regular: #606266;
+  --cd-text-color-secondary: #909399;
+  --cd-text-color-placeholder: #a8abb2;
+  --cd-text-color-disabled: #c0c4cc;
+  --cd-border-color: #dcdfe6;
+  --cd-border-color-light: #e4e7ed;
+  --cd-border-color-lighter: #ebeef5;
+  --cd-border-color-extra-light: #f2f6fc;
+  --cd-border-color-dark: #d4d7de;
+  --cd-border-color-darker: #cdd0d6;
+  --cd-fill-color: #f0f2f5;
+  --cd-fill-color-light: #f5f7fa;
+  --cd-fill-color-lighter: #fafafa;
+  --cd-fill-color-extra-light: #fafcff;
+  --cd-fill-color-dark: #ebedf0;
+  --cd-fill-color-darker: #e6e8eb;
+  --cd-fill-color-blank: #ffffff;
+
+  @each $val, $color in var(--colors) {
+    --cd-color-$(val): $(color);
+
+    @for $i from 3 to 9 {
+      --cd-color-$(val)-light-$(i): mix(#fff, $(color), 0$ (i));
+    }
+
+    --cd-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+  }
+
+  /* border */
+  --cd-border-width: 1px;
+  --cd-border-style: solid;
+  --cd-border-color-hover: var(--cd-text-color-disabled);
+  --cd-border: var(--cd-border-width) var(--cd-border-style)
+    var(--cd-border-color);
+  --cd-border-radius-base: 4px;
+  --cd-border-radius-small: 2px;
+  --cd-border-radius-round: 20px;
+  --cd-border-radius-circle: 100%;
+
+  /*font*/
+  --cd-font-size-extra-large: 20px;
+  --cd-font-size-large: 18px;
+  --cd-font-size-medium: 16px;
+  --cd-font-size-base: 14px;
+  --cd-font-size-small: 13px;
+  --cd-font-size-extra-small: 12px;
+  --cd-font-family: "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial,
+    sans-serif;
+  --cd-font-weight-primary: 500;
+
+  /*disabled*/
+  --cd-disabled-bg-color: var(--cd-fill-color-light);
+  --cd-disabled-text-color: var(--cd-text-color-placeholder);
+  --cd-disabled-border-color: var(--cd-border-color-light);
+
+  /*animation*/
+  --cd-transition-duration: 0.4s;
+  --cd-transition-duration-fast: 0.2s;
+}

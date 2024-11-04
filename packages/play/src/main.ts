@@ -1,6 +1,6 @@
 import { createApp } from "vue";
-import "./style.css";
 import App from "./App.vue";
+import "@condev-element/theme/index.css";
 
 import CondevElement from "condev-element";
 
