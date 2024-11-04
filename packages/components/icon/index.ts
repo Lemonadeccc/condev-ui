@@ -1,6 +1,6 @@
-import Button from "./Button.vue";
+import Icon from "./Icon.vue";
 import { withInstall } from "@condev-element/utils";
 
-export const CdButton = withInstall(Button);
+export const CdIcon = withInstall(Icon);
 
 export * from "./types";
