@@ -24,21 +24,6 @@ const customStyles = computed(() => ({ color: props.color ?? void 0 }));
   </i>
 </template>
 
-<style scoped>
-.cd-icon {
-  --cd-icon-color: inherit;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  fill: currentColor;
-  color: var(--cd-icon-color);
-  font-size: inherit;
-}
-
-@each $val in primary, info, success, warning, danger {
-  .cd-icon--$(val) {
-    --cd-icon-color: var(--cd-color-$(val));
-  }
-}
+<style>
+@import "./style.css";
 </style>

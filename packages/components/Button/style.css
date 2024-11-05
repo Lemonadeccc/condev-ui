@@ -169,7 +169,7 @@
 
 .cd-button-group {
   display: inline-block;
-  vertical-align: middle;1
+  vertical-align: middle;
 
   &::after {
     clear: both;
