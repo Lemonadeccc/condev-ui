@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm --filter @condev-element/play dev",
-    "story": "pnpm --filter @condev-element/play storybook",
+    "dev": "pnpm run build && pnpm --filter @condev-element/play dev",
+    "story": "pnpm run build && pnpm --filter @condev-element/play storybook",
     "docs:dev": "pnpm --filter @condev-element/docs dev",
     "docs:build": "pnpm --filter @condev-element/docs build",
     "test": "pnpm --filter @condev-element/components test",
