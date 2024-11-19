@@ -4,6 +4,7 @@ import {
   CdIcon,
   CdCollapse,
   CdCollapseItem,
+  CdAlert,
 } from "@condev-element/components";
 import type { Plugin } from "vue";
 
@@ -13,4 +14,5 @@ export default [
   CdIcon,
   CdCollapse,
   CdCollapseItem,
+  CdAlert,
 ] as Plugin[];
