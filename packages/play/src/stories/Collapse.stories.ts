@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import "condev-element/dist/index.css";
+// import "condev-element/dist/index.css";
+import "condev-element/dist/theme/Collapse.css";
 
 import { CdCollapse, CdCollapseItem } from "condev-element";
 

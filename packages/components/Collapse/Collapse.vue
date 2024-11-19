@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, provide, watch } from "vue";
+import { ref, provide, watch, watchEffect } from "vue";
 import { each } from "lodash-es";
 import type { CollapseItemName, CollapseProps, CollapseEmits } from "./types";
 // import { debugWarn } from "@condev-element/utils";
+import { debugWarn } from "@condev-element/utils";
 import { COLLAPSE_CTX_KEY } from "./constant";
 
 const COMPONENT_NAME = "CdCollapse" as const;
@@ -17,10 +18,7 @@ const activeNames = ref<CollapseItemName[]>(props.modelValue);
 
 if (props.accordion && activeNames.value.length > 1) {
   // debugWarn(COMPONENT_NAME, "accordion mode should only have one active item");
-  console.warn(
-    COMPONENT_NAME,
-    "accordion mode should only have one active item"
-  );
+  debugWarn(COMPONENT_NAME, "accordion mode should only have one active item");
 }
 
 function handleItemClick(item: CollapseItemName) {
@@ -49,6 +47,15 @@ function updateActiveNames(val: CollapseItemName[]) {
     emits(e as "update:modelValue" & "change", val)
   );
 }
+
+watchEffect(() => {
+  if (props.accordion && activeNames.value.length > 1) {
+    console.warn(
+      COMPONENT_NAME,
+      "accordion mode should only have one active item"
+    );
+  }
+});
 
 watch(
   () => props.modelValue,
