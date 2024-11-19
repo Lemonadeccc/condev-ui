@@ -73,8 +73,8 @@ export default defineConfig({
   ],
   build: {
     outDir: "dist/es",
-    // minify: "terser",
-    minify: false,
+    minify: "terser",
+    // minify: false,
     // terserOptions: {
     //   compress: {},
     //   format: {},
