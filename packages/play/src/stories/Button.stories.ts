@@ -1,10 +1,11 @@
 import type { Meta, StoryObj, ArgTypes } from "@storybook/vue3";
 import { fn, within, userEvent, expect, clearAllMocks } from "@storybook/test";
 // import "@condev-element/theme/index.css";
-import "condev-element/dist/index.css";
 
+// import "condev-element/dist/index.css";
 
 import { CdButton, CdButtonGroup } from "condev-element";
+import "condev-element/dist/theme/Button.css";
 
 type Story = StoryObj<typeof CdButton> & { argTypes?: ArgTypes };
 
