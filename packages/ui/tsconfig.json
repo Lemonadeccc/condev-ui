@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src", "./tsup.config.ts", "../../@types"],
+  // "exclude": ["node_modules", "dist", "es"]
+}

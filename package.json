@@ -1,15 +1,26 @@
 {
-  "name": "con-ui",
+  "name": "condev-ui",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
+  "packageManager": "pnpm@10.6.2",
   "scripts": {
+    "dev:ui": "pnpm --filter @condev-ui/ui dev",
+    "dev:website": "pnpm --filter @condev-ui/website dev",
+    "dev:graph": "turbo dev --graph",
+    "build:ui": "pnpm --filter @condev-ui/ui build",
+    "build:website": "pnpm --filter @condev-ui/website build",
+    "build:graph": "turbo build --graph",
+    "dev": "turbo dev",
+    "build": "turbo build",
     "lint": "eslint \"{packages,apps}/**/*.{js,jsx,ts,tsx}\"",
     "lint:style": "stylelint \"{packages,apps}/**/*.{css,ts,tsx}\"",
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages|apps)/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md)\"",
     "test": "vitest run --silent",
     "commit": "git-cz",
-    "prepare": "husky"
+    "prepare": "husky",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "publish:ui": "np"
   },
   "config": {
     "commitizen": {
@@ -20,14 +31,20 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.1"
+  },
   "devDependencies": {
     "eslint": "9.22.0",
     "@eslint/js": "9.22.0",
     "globals": "16.0.0",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "typescript": "5.8.2",
-    "typescript-eslint": "8.26.0",
-    "@typescript-eslint/eslint-plugin": "8.26.0",
+    "typescript-eslint": "8.26.1",
+    "@typescript-eslint/eslint-plugin": "8.26.1",
     "stylelint": "16.15.0",
     "stylelint-config-standard": "37.0.0",
     "postcss-styled-syntax": "0.7.1",
@@ -38,6 +55,12 @@
     "cz-git": "1.11.1",
     "commitizen": "4.3.1",
     "vitest": "3.0.8",
-    "@testing-library/react": "16.2.0"
+    "@testing-library/react": "16.2.0",
+    "jsdom": "26.0.0",
+    "@testing-library/jest-dom": "6.6.3",
+    "@vitejs/plugin-react": "4.3.4",
+    "conventional-changelog-cli": "5.0.0",
+    "np": "10.2.0",
+    "turbo": "2.4.4"
   }
 }

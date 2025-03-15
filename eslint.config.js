@@ -7,6 +7,16 @@ import js from "@eslint/js";
 export default tseslint.config({
   extends: [js.configs.recommended, ...tseslint.configs.recommended],
   files: ["**/*.{js,jsx,ts,tsx}"],
+  ignores: [
+    "apps/**/*/static/*",
+    "apps/**/*/{tmp,.dumi}/**/*",
+    "*.js",
+    "**/*/build/**/*",
+    "**/*/es/**/*",
+    "**/*/dist/**/*",
+    "packages/ui/es/**/*",
+    "packages/ui/dist/**/*",
+  ],
   rules: {
     "no-console": "error",
     "simple-import-sort/imports": [
@@ -23,6 +33,10 @@ export default tseslint.config({
       },
     ],
     "simple-import-sort/exports": "error",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "react-internal/safe-string-coercion": "off",
   },
   languageOptions: {
     globals: {

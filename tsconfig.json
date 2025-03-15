@@ -1,11 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "lib": ["ESNext"],
+    "target": "ES2015",
+    "lib": ["DOM", "ESNext"],
+    "types": ["@testing-library/jest-dom"],
     "allowJs": true,
     "module": "ESNext",
-    "jsx": "react",
-    "moduleResolution": "node"
-  },
-  "include": ["packages/**/*", "apps/**/*"]
+    "moduleResolution": "Bundler",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "preserveSymlinks": true,
+    "paths": {
+      "@condev/*": ["./packages/@condev-ui/*/src"],
+      "@ui/*": ["./packages/ui/src/*"],
+      "@components/*": ["./packages/ui/src/components/*"],
+    }
+  }
 }
