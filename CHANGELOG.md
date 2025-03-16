@@ -1,29 +1,15 @@
-#更新日志
+## 1.0.1 (2025-03-16)
 
-## [1.0.0]-2025-03-15
 
-### Added
+### Bug Fixes
 
-新增用户登录的多因素认证支持。
-新增用户资料页面的头像上传功能。
+* :bug: fix eslint & tsup & stylelint configuration errors. ([dc62b10](https://github.com/Lemonadeccc/con-ui/commit/dc62b10402f9a3f445bc03c08ab969a20717b26b))
 
-### Changed
 
-更新主页的 U 江设计以提升用户体验。
-调整数据导入模块的性能优化。
-##Deprecated
-弃用 I 旧版 API 接口，将在 2.日.© 版本中完全移除。
+### Features
 
-### Removed
+* :sparkles: add rspress/np/changelog/turorepo. ([e1a9e58](https://github.com/Lemonadeccc/con-ui/commit/e1a9e58342c5eb62b9be5842a0fa1ee30e030271))
+* :sparkles: initialize the project. ([a832f04](https://github.com/Lemonadeccc/con-ui/commit/a832f042679bba94cad975a60d6a97e9b66a51b9))
 
-移除不再使用的第三方库依赖。
 
-### Fixed
 
-修复用户注册时邮箱验证失败的问题。
-修复文件上传过程中可能导致的崩溃问题。
-
-### Security
-
-修复了一个潜在的$QL 注入漏洞。
-更新依赖库以修复已知的安全漏洞。
