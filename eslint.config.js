@@ -4,51 +4,51 @@ import tseslint from "typescript-eslint";
 
 import js from "@eslint/js";
 
-export default tseslint.config({
-  extends: [js.configs.recommended, ...tseslint.configs.recommended],
-  files: ["**/*.{js,jsx,ts,tsx}"],
-  ignores: [
-    "apps/**/*/static/*",
-    "apps/**/*/{tmp,.dumi}/**/*",
-    "*.js",
-    "**/*/build/**/*",
-    "**/*/es/**/*",
-    "**/*/dist/**/*",
-    "packages/ui/es/**/*",
-    "packages/ui/dist/**/*",
-  ],
-  rules: {
-    "no-console": "error",
-    "simple-import-sort/imports": [
-      "error",
-      {
-        groups: [
-          ["^\\w"],
-          ["^@\\w"],
-          ["^@/"],
-          ["^\\u0000"],
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-        ],
-      },
+export default tseslint.config([
+  {
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ["**/*.{js,jsx,ts,tsx}"],
+    ignores: [
+      "apps/**/doc_build/**",
+      "**/build/**",
+      "**/es/**",
+      "**/tests/**",
+      "**/dist/**",
+      "**/*.js",
     ],
-    "simple-import-sort/exports": "error",
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/restrict-template-expressions": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
-    "react-internal/safe-string-coercion": "off",
-  },
-  languageOptions: {
-    globals: {
-      ...globals.browser,
-      ...globals.node,
+    rules: {
+      "no-console": "error",
+      "simple-import-sort/imports": [
+        "error",
+        {
+          groups: [
+            ["^\\w"],
+            ["^@\\w"],
+            ["^@/"],
+            ["^\\u0000"],
+            ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+            ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          ],
+        },
+      ],
+      "simple-import-sort/exports": "error",
     },
-    parser: tseslint.parser,
-    parserOptions: {
-      tsconfigRootDir: import.meta.dirname,
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+      parser: tseslint.parser,
+      parserOptions: {
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    plugins: {
+      "simple-import-sort": importSort,
     },
   },
-  plugins: {
-    "simple-import-sort": importSort,
+  {
+    files: ["**/*.js"],
   },
-});
+]
+);

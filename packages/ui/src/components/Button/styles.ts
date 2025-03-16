@@ -6,25 +6,25 @@ export const getSize = (size: string) => {
   switch (size) {
     case "small":
       return css`
-        padding: 0px 7px;
+        padding: 0 7px;
         font-size: 14px;
         border-radius: 4px;
       `;
     case "medium":
       return css`
-        padding: 0px 15px;
+        padding: 0 15px;
         font-size: 14px;
         border-radius: 4px;
       `;
     case "large":
       return css`
-        padding: 0px 15px;
+        padding: 0 15px;
         font-size: 16px;
         border-radius: 4px;
       `;
     default:
       return css`
-        padding: 0px 7px;
+        padding: 0 7px;
         font-size: 16px;
         border-radius: 4px;
       `;
@@ -85,6 +85,7 @@ export const getVariant = (variant: ButtonProps["variant"]) => {
         }
 
         &:active {
+          background-color: white;
         }
       `;
     case "danger":

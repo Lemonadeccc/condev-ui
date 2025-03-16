@@ -158,4 +158,6 @@
 
 /* dark mode */
 :root[data-condev-color-schema="dark"] {
+  --condev-color-orange-8: #e8590c;
+  --condev-color-orange-9: #d9480f;
 }

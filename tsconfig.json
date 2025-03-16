@@ -18,7 +18,9 @@
     "paths": {
       "@condev/*": ["./packages/@condev-ui/*/src"],
       "@ui/*": ["./packages/ui/src/*"],
-      "@components/*": ["./packages/ui/src/components/*"],
+      "@components/*": ["./packages/ui/src/components/*"]
     }
-  }
+  },
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Base"
 }
