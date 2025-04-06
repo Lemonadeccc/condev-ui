@@ -77,7 +77,7 @@ jobs:
       - name: Download doc
         uses: actions/download-artifact@v4
         with:
-          name: doc_build
+          name: doc
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
