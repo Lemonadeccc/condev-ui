@@ -9,7 +9,14 @@ import { Button } from '@condev-ui/ui';
 
 export default function ButtonDemo() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', gap: '10px' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: '10px',
+      }}
+    >
       <div>
         <Button size="small">Small</Button>
       </div>
@@ -69,14 +76,15 @@ export default function ButtonDemo() {
 ```
 
 Event
-```tsx
-import React from "react";
 
-import { Button } from "@condev-ui/ui";
+```tsx
+import React from 'react';
+
+import { Button } from '@condev-ui/ui';
 
 export default function ButtonEvent() {
   function handleClick() {
-    alert("clicked");
+    alert('clicked');
   }
   return (
     <div>
@@ -84,10 +92,8 @@ export default function ButtonEvent() {
     </div>
   );
 }
-
 ```
 
 ## API
 
 <API moduleName="button" />
-```

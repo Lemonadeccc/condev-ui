@@ -6,6 +6,8 @@ import { pluginLastUpdated } from '@rspress/plugin-last-updated';
 import { pluginPreview } from '@rspress/plugin-preview';
 import { pluginShiki } from '@rspress/plugin-shiki';
 
+const relativePath = path.join(__dirname, '../../packages/ui/src/components');
+
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
   title: 'condev-ui',
@@ -30,7 +32,8 @@ export default defineConfig({
     pluginShiki(),
     pluginApiDocgen({
       entries: {
-        button: path.join(__dirname, '../../packages/ui/src/index.ts'),
+        button: relativePath + '/Button/index.ts',
+        calendar: relativePath + '/Calendar/index.ts',
       },
       apiParseTool: 'react-docgen-typescript',
     }),

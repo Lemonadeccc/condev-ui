@@ -18,14 +18,15 @@ export const getSize = (size: string) => {
       `;
     case "large":
       return css`
+        height: 30px;
         padding: 0 15px;
         font-size: 16px;
         border-radius: 4px;
       `;
     default:
       return css`
-        padding: 0 7px;
-        font-size: 16px;
+        padding: 0 15px;
+        font-size: 14px;
         border-radius: 4px;
       `;
   }

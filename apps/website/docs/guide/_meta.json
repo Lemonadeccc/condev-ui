@@ -8,5 +8,10 @@
     "type": "file",
     "name": "button",
     "label": "button"
+  },
+  {
+    "type":"file",
+    "name":"calendar",
+    "label":"calendar"
   }
 ]

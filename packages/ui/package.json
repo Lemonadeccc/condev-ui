@@ -14,6 +14,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "dayjs": "^1.11.13",
     "react-dom": "18.3.1",
     "styled-components": "6.1.15"
   },
@@ -21,7 +22,7 @@
     "react": "18.3.1"
   },
   "devDependencies": {
-    "typescript": "5.4.5",
-    "tsup": "8.4.0"
+    "tsup": "8.4.0",
+    "typescript": "5.4.5"
   }
 }

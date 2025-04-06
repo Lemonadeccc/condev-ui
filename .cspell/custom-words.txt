@@ -2,3 +2,4 @@ condev
 Condev
 rspress
 Shiki
+languagedetector
