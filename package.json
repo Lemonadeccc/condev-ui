@@ -22,7 +22,8 @@
     "commit": "git-cz",
     "prepare": "husky",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-    "publish:ui": "np --no-publish && npm publish"
+    "publish:ui": "np --no-publish && npm publish",
+    "workflow": "node ./script/check-act.js && act"
   },
   "config": {
     "commitizen": {
