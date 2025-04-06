@@ -60,24 +60,24 @@ jobs:
       - name: Build UI package
         run: pnpm run build:ui
 
-      - name: Build docs
+      - name: Build doc
         run: pnpm run build:website
 
-      - name: Upload docs
+      - name: Upload doc
         uses: actions/upload-artifact@v4
         with:
-          name: docs
-          path: ./apps/website/docs_build
+          name: doc
+          path: ./apps/website/doc_build
 
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Download docs
+      - name: Download doc
         uses: actions/download-artifact@v4
         with:
-          name: docs
+          name: doc_build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

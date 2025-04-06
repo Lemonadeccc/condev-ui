@@ -9,6 +9,7 @@ import { pluginShiki } from '@rspress/plugin-shiki';
 const relativePath = path.join(__dirname, '../../packages/ui/src/components');
 
 export default defineConfig({
+  base: '/condev-ui/',
   root: path.join(__dirname, 'docs'),
   title: 'condev-ui',
   icon: '/rspress-icon.png',
