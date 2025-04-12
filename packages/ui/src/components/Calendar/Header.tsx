@@ -1,6 +1,5 @@
 import React from "react";
 
-import { ArrowButton, CalendarHeader, CurrentDate } from "./styles";
 import type { HeaderProps } from "./types";
 
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
@@ -19,10 +18,31 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   };
 
   return (
-    <CalendarHeader>
-      <ArrowButton onClick={handlePrevMonth}>&lt;</ArrowButton>
-      <CurrentDate>{currentMonth?.format("YYYY年MM月")}</CurrentDate>
-      <ArrowButton onClick={handleNextMonth}>&gt;</ArrowButton>
-    </CalendarHeader>
+    <div className="calendar-header">
+      <button
+        type="button"
+        className="calendar-arrow-button"
+        onClick={handlePrevMonth}
+        aria-label="Previous month"
+      >
+        &lt;
+      </button>
+      <div
+        className="calendar-current-date"
+        role="button"
+        aria-live="polite"
+        tabIndex={0}
+      >
+        {currentMonth?.format("YYYY年MM月")}
+      </div>
+      <button
+        type="button"
+        className="calendar-arrow-button"
+        onClick={handleNextMonth}
+        aria-label="Next month"
+      >
+        &gt;
+      </button>
+    </div>
   );
 };

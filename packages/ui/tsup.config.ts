@@ -6,7 +6,7 @@ export default defineConfig([
     ignoreWatch: ["**/es", "**/dist", "**/*.css"],
     outDir: "es",
     format: ["esm"],
-    // dts: true,
+    dts: true,
     clean: true,
     splitting: false,
     sourcemap: true,

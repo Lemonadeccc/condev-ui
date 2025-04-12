@@ -7,9 +7,9 @@ import js from "@eslint/js";
 export default tseslint.config([
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ["**/*.{js,jsx,ts,tsx}"],
+    files: ["**/*.{js,jsx,ts,tsx}", "**/**/*.{js,jsx,ts,tsx}"],
     ignores: [
-      "apps/**/doc_build/**",
+      "apps/**/dist/**",
       "**/build/**",
       "**/es/**",
       "**/tests/**",

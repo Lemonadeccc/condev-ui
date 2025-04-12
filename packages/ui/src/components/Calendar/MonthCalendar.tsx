@@ -1,3 +1,4 @@
+import cn from "clsx";
 import type { Dayjs } from "dayjs";
 import dayjs from "dayjs";
 import localeData from "dayjs/plugin/localeData";
@@ -5,15 +6,14 @@ import React from "react";
 
 dayjs.extend(localeData);
 
-import { CalendarContent, DateCell, WeekDay } from "./styles";
 import type { MonthCalendarProps, MonthType } from "./types";
 
-function getAllDays(date: Dayjs) {
+function getAllDays(date: Dayjs): MonthType[] {
   const daysInMonth = date.daysInMonth();
   const startDate = date.startOf("month");
   const startDay = startDate.day();
 
-  const days: Array<MonthType> = [];
+  const days: MonthType[] = [];
 
   const firstDayOfWeek = dayjs.localeData().firstDayOfWeek();
   let daysFromPrevMonth = startDay - firstDayOfWeek;
@@ -35,7 +35,8 @@ function getAllDays(date: Dayjs) {
     });
   }
 
-  const remaining = 42 - days.length;
+  const totalCells = days.length <= 35 ? 35 : 42;
+  const remaining = totalCells - days.length;
   const endDate = date.endOf("month");
   for (let i = 1; i <= remaining; i++) {
     days.push({
@@ -50,7 +51,7 @@ function getAllDays(date: Dayjs) {
 export const MonthCalendar: React.FC<MonthCalendarProps> = (
   props: MonthCalendarProps
 ) => {
-  const { displayMonth, selectedValue, onSelectDate, isDetail = false } = props;
+  const { displayMonth, selectedValue, onSelectDate } = props;
 
   const weekdays = dayjs.weekdaysMin();
   const firstDayOfWeek = dayjs.localeData().firstDayOfWeek();
@@ -62,22 +63,62 @@ export const MonthCalendar: React.FC<MonthCalendarProps> = (
   const allDays = getAllDays(displayMonth);
 
   return (
-    <CalendarContent>
-      {sortedWeekdays.map((week) => (
-        <WeekDay key={week}>{week}</WeekDay>
-      ))}
-      {allDays.map((day) => (
-        <DateCell
-          key={`${day.currentMonth}-${day.date.toString()}`}
-          isEmpty={day.currentMonth !== "curr"}
-          isToday={day.date.isSame(dayjs(), "day")}
-          isSelected={!!selectedValue && day.date.isSame(selectedValue, "day")}
-          isDetail={isDetail}
-          onClick={() => onSelectDate(day.date)}
-        >
-          {day.date.date()}
-        </DateCell>
-      ))}
-    </CalendarContent>
+    <div className="calendar-content" role="grid" aria-label="Month grid">
+      {" "}
+      <div role="row" className="contents">
+        {" "}
+        {sortedWeekdays.map((week) => (
+          <div
+            key={week}
+            className="calendar-weekday"
+            role="columnheader"
+            aria-label={dayjs().day(weekdays.indexOf(week)).format("dddd")}
+          >
+            {" "}
+            {week}
+          </div>
+        ))}
+      </div>
+      {allDays.map((day) => {
+        const isCurrentMonth = day.currentMonth === "curr";
+        const isToday = isCurrentMonth && day.date.isSame(dayjs(), "day");
+        const isSelected =
+          isCurrentMonth &&
+          !!selectedValue &&
+          day.date.isSame(selectedValue, "day");
+
+        const cellClasses = cn("calendar-date-cell", {
+          "calendar-date-cell-current":
+            isCurrentMonth && !isSelected && !isToday,
+          "calendar-date-cell-other-month": !isCurrentMonth,
+          "calendar-date-cell-today": isToday && !isSelected,
+          "calendar-date-cell-selected": isSelected,
+        });
+
+        return (
+          <div
+            key={day.date.toString()}
+            className={cellClasses}
+            role="gridcell"
+            aria-selected={isSelected}
+            aria-disabled={!isCurrentMonth}
+            aria-label={day.date.format("YYYY-MM-DD")}
+            onClick={() => {
+              if (isCurrentMonth) {
+                onSelectDate(day.date);
+              }
+            }}
+            tabIndex={isCurrentMonth ? 0 : -1}
+            onKeyDown={(e) => {
+              if (isCurrentMonth && (e.key === "Enter" || e.key === " ")) {
+                onSelectDate(day.date);
+              }
+            }}
+          >
+            {day.date.date()}
+          </div>
+        );
+      })}
+    </div>
   );
 };

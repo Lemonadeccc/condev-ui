@@ -21,6 +21,7 @@
       "@components/*": ["./packages/ui/src/components/*"]
     }
   },
+  "exclude": ["**/node_modules", "**/dist", "**/es", "**/build"],
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Base"
 }

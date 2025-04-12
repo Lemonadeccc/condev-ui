@@ -1,18 +1,34 @@
 import React from "react";
 
-import * as SC from "./styles";
+import "./index.css";
+
 import { ButtonProps } from "./types";
 
 export const Button = (props: ButtonProps) => {
-  const { variant, size, disabled, children, onClick } = props;
+  const {
+    variant = "filled",
+    size = "medium",
+    disabled,
+    children,
+    onClick,
+    ...rest
+  } = props;
+
+  const baseClass = "btn";
+  const variantClass = `btn-${variant}`;
+  const sizeClass = `btn-${size}`;
+  const disabledClass = disabled ? "btn-disabled" : "";
+
+  const buttonClass = `${baseClass} ${variantClass} ${sizeClass} ${disabledClass}`;
+
   return (
-    <SC.Button
-      size={size}
-      variant={variant}
+    <button
+      className={buttonClass}
       disabled={disabled}
       onClick={onClick}
+      {...rest}
     >
       {children}
-    </SC.Button>
+    </button>
   );
 };

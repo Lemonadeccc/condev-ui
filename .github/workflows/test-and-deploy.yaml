@@ -38,7 +38,7 @@ jobs:
         run: pnpm run test
 
   build:
-    name: Build docs
+    name: Build website
     runs-on: ubuntu-latest
     needs: test
 
@@ -60,24 +60,24 @@ jobs:
       - name: Build UI package
         run: pnpm run build:ui
 
-      - name: Build doc
-        run: pnpm run build:website
+      - name: Build website
+        run: pnpm run build:web
 
-      - name: Upload doc
+      - name: Upload website
         uses: actions/upload-artifact@v4
         with:
-          name: doc
-          path: ./apps/website/doc_build
+          name: website
+          path: ./apps/web/dist
 
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Download doc
+      - name: Download website
         uses: actions/download-artifact@v4
         with:
-          name: doc
+          name: website
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
