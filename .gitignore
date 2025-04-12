@@ -4,11 +4,6 @@ node_modules
 **/dist
 **/es
 
-# dumi
-**/.dumi
-**/tmp
-**/docs-dist
-
 .turbo
 
 .cspellcache
