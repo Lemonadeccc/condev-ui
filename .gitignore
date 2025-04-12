@@ -1,0 +1,13 @@
+node_modules
+.DS_Store
+**/build
+**/dist
+**/es
+
+.turbo
+
+.cspellcache
+
+yarn.lock
+
+node_modules/
