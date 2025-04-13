@@ -1,12 +1,13 @@
 import path from "path";
+import ReactComponentName from "react-scan/react-component-name/vite";
 import { defineConfig } from "vite";
 
 import react from "@vitejs/plugin-react-swc";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/condev-ui/',
-  plugins: [react()],
+  base: "/condev-ui/",
+  plugins: [react(), ReactComponentName()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
