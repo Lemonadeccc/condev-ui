@@ -8,9 +8,8 @@ import { Header } from "./Header";
 import { MonthCalendar } from "./MonthCalendar";
 import { CalendarProps } from "./types";
 
-export const Calendar = (props: CalendarProps) => {
-  const { value, defaultValue, onChange, isDetail } = props; // Destructure isDetail if needed by MonthCalendar
-
+export const Calendar: React.FC<CalendarProps> = (props: CalendarProps) => {
+  const { value, defaultValue, onChange, isDetail } = props;
   const [viewDate, setViewDate] = useState<Dayjs>(
     value || defaultValue || dayjs()
   );

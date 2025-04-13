@@ -4,7 +4,7 @@ import "./index.css";
 
 import { ButtonProps } from "./types";
 
-export const Button = (props: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   const {
     variant = "filled",
     size = "medium",
