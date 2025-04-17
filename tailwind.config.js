@@ -2,7 +2,7 @@
 export default {
   content: [
     './packages/ui/src/components/**/*.{js,jsx,ts,tsx}', 
-    './apps/website/docs/**/*.{mdx,jsx,ts,tsx}', 
+    './apps/web/**/*.{mdx,jsx,ts,tsx}', 
   ],
   theme: {
     extend: {},
