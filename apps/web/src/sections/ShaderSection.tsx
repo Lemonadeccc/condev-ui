@@ -3,16 +3,13 @@ import React, { useEffect, useRef } from "react";
 
 import { useCanvas } from "../hook/useCanvas";
 
-// 基本着色器示例 (可替换为你想要的着色器)
 const defaultFragmentShader = `
 #ifdef GL_ES
 precision highp float;
 #endif
 
 uniform float u_time;
-uniform vec2 u_resolution; // 使用 GlslCanvas 提供的 u_resolution
-// uniform vec2 u_mouse; // 取消注释：因为代码中使用了 u_mouse
-// uniform vec3 spectrum; // 移除：未使用且未提供
+uniform vec2 u_resolution; 
 
 varying vec2 v_texcoord;
 
@@ -102,7 +99,7 @@ export const ShaderSection = () => {
 
       <canvas
         ref={canvasRef}
-        id="glslCanvasElement" // 添加 ID 以便可能更容易选择，但 ref 是主要的
+        id="glslCanvasElement"
         className="w-[500px] h-[500px] rounded-full"
       ></canvas>
 

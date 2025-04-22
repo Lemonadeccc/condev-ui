@@ -2,7 +2,6 @@ import React from "react";
 
 import { useGLTF } from "@react-three/drei";
 
-// 定义正确的模型路径，考虑 Vite 的 base URL
 const modelPath = `${import.meta.env.BASE_URL}models/quantum_cube.glb`;
 
 export function Cube(props) {
