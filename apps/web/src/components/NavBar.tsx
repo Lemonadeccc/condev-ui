@@ -7,7 +7,7 @@ export const NavBar = () => {
     <header className="navbar">
       <div className="inner">
         <a href="#hero" className="logo">
-          Lemonadeccc | CONDEV
+          CONDEV
         </a>
 
         <nav className="desktop">

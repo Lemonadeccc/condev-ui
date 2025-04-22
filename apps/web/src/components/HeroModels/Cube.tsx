@@ -2,9 +2,12 @@ import React from "react";
 
 import { useGLTF } from "@react-three/drei";
 
+// 定义正确的模型路径，考虑 Vite 的 base URL
+const modelPath = `${import.meta.env.BASE_URL}models/quantum_cube.glb`;
+
 export function Cube(props) {
   const group = React.useRef();
-  const { nodes, materials } = useGLTF("/models/quantum_cube.glb");
+  const { nodes, materials } = useGLTF(modelPath);
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
@@ -107,4 +110,4 @@ export function Cube(props) {
   );
 }
 
-useGLTF.preload("/models/quantum_cube.glb");
+useGLTF.preload(modelPath);
