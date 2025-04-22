@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef, useState } from "react";
 
 import { useGSAP } from "@gsap/react";
+import bg from "@image/bg.png";
 
 import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
@@ -11,7 +12,7 @@ import { words } from "../constants/index";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const MAX_LIGHT_INTENSITY = 4.1; // 定义灯光最大强度
+const MAX_LIGHT_INTENSITY = 5; // 定义灯光最大强度
 // const LIGHT_START_POS = [-26, 25.7, -5.1]; // 灯光初始位置 (从正上方、靠前照射)
 // const LIGHT_MID_POS = [-13, 13, -2.5]; // 灯光中间位置 (动画目标位置) // 注意：这里可能也需要调整以匹配新的动画意图
 const LIGHT_START_POS = [-18, 25.7, -5.1]; // 灯光初始位置 (从正上方、靠前照射)
@@ -124,7 +125,7 @@ export const Hero: React.FC = () => {
       className="relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="background" />
+        <img src={bg} alt="background" />
       </div>
 
       <div className="hero-layout">
@@ -157,8 +158,7 @@ export const Hero: React.FC = () => {
               <h1>that Deliver Results</h1>
             </div>
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Just a simple developer.
-              experiences.
+              Just a simple developer. experiences.
             </p>
 
             <Button

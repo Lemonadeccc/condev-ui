@@ -1,8 +1,9 @@
 import "./App.css";
-import "@condev-ui/ui/es/index.css";
 
+// import "@condev-ui/ui/es/index.css";
 import { NavBar } from "./components/NavBar";
 import { Hero } from "./sections/Hero";
+import { ShaderSection } from "./sections/ShaderSection";
 import { ShowcaseSection } from "./sections/ShowcaseSection";
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
       <NavBar />
 
       <Hero />
+
+      <ShaderSection />
 
       <ShowcaseSection />
     </>
