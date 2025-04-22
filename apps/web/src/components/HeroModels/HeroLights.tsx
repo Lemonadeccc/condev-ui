@@ -55,14 +55,11 @@ const HeroLights: React.FC<HeroLightsProps> = ({
 
   return (
     <>
-      {/* Keep ambient light static for now */}
       <ambientLight intensity={0.2} color="#1a1a40" />
 
-      {/* Directional light controlled by props */}
       <directionalLight
         ref={lightRef}
-        // Initial properties are now set/overridden by useEffect
-        castShadow // Enable shadows if desired
+        castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
         shadow-camera-far={50}
@@ -71,12 +68,6 @@ const HeroLights: React.FC<HeroLightsProps> = ({
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
       />
-
-      {/* Optional: Target object helper (visible only in development) */}
-      {/* <primitive object={targetRef.current} /> */}
-      {/* <axesHelper args={[5]} /> */}
-
-      {/* <spotLight position={[4, 5, 5]} intensity={40} /> angle={0.3} penumbra={0.5} color="4cc9f0" */}
     </>
   );
 };

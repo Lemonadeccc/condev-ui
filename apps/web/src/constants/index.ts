@@ -1,4 +1,42 @@
-// 导航链接类型
+import chatPng from "@image/chat.png";
+import client1Png from "@image/client1.png";
+import client2Png from "@image/client2.png";
+import client3Png from "@image/client3.png";
+import client4Png from "@image/client4.png";
+import client5Png from "@image/client5.png";
+import codeSvg from "@image/code.svg";
+import conceptsSvg from "@image/concepts.svg";
+import designsSvg from "@image/designs.svg";
+import exp1Png from "@image/exp1.png";
+import exp2Png from "@image/exp2.png";
+import exp3Png from "@image/exp3.png";
+import fbPng from "@image/fb.png";
+import ideasSvg from "@image/ideas.svg";
+import instaPng from "@image/insta.png";
+import linkedinPng from "@image/linkedin.png";
+import logo1Png from "@image/logo1.png";
+import logo2Png from "@image/logo2.png";
+import logo3Png from "@image/logo3.png";
+import companyLogo1 from "@image/logos/company-logo-1.png";
+import companyLogo2 from "@image/logos/company-logo-2.png";
+import companyLogo3 from "@image/logos/company-logo-3.png";
+import companyLogo4 from "@image/logos/company-logo-4.png";
+import companyLogo5 from "@image/logos/company-logo-5.png";
+import companyLogo6 from "@image/logos/company-logo-6.png";
+import companyLogo7 from "@image/logos/company-logo-7.png";
+import companyLogo8 from "@image/logos/company-logo-8.png";
+import companyLogo9 from "@image/logos/company-logo-9.png";
+import companyLogo10 from "@image/logos/company-logo-10.png";
+import companyLogo11 from "@image/logos/company-logo-11.png";
+import gitLogo from "@image/logos/git.svg";
+import nodeLogo from "@image/logos/node.png";
+import pythonLogo from "@image/logos/python.svg";
+import reactLogo from "@image/logos/react.png";
+import threeLogo from "@image/logos/three.png";
+import seoPng from "@image/seo.png";
+import timePng from "@image/time.png";
+import xPng from "@image/x.png";
+
 type NavLink = {
   name: string;
   link: string;
@@ -6,42 +44,39 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   {
-    name: "Work",
-    link: "#work",
+    name: "Home",
+    link: "#home",
   },
   {
-    name: "Experience",
-    link: "#experience",
+    name: "Docs",
+    link: "#docs",
   },
   {
-    name: "Skills",
-    link: "#skills",
+    name: "Components",
+    link: "#components",
   },
   {
-    name: "Testimonials",
-    link: "#testimonials",
+    name: "Storybook",
+    link: "#storybook",
   },
 ];
 
-
-// 文字项类型
 type Word = {
   text: string;
   imgPath: string;
 };
 
 const words: Word[] = [
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
+  { text: "Ideas", imgPath: ideasSvg },
+  { text: "Concepts", imgPath: conceptsSvg },
+  { text: "Designs", imgPath: designsSvg },
+  { text: "Code", imgPath: codeSvg },
+  { text: "Ideas", imgPath: ideasSvg },
+  { text: "Concepts", imgPath: conceptsSvg },
+  { text: "Designs", imgPath: designsSvg },
+  { text: "Code", imgPath: codeSvg },
 ];
 
-// 计数器项类型
 type CounterItem = {
   value: number;
   suffix: string;
@@ -55,48 +90,46 @@ const counterItems: CounterItem[] = [
   { value: 90, suffix: "%", label: "Client Retention Rate" },
 ];
 
-// Logo图标类型
 type LogoIcon = {
   imgPath: string;
 };
 
 const logoIconsList: LogoIcon[] = [
   {
-    imgPath: "/images/logos/company-logo-1.png",
+    imgPath: companyLogo1,
   },
   {
-    imgPath: "/images/logos/company-logo-2.png",
+    imgPath: companyLogo2,
   },
   {
-    imgPath: "/images/logos/company-logo-3.png",
+    imgPath: companyLogo3,
   },
   {
-    imgPath: "/images/logos/company-logo-4.png",
+    imgPath: companyLogo4,
   },
   {
-    imgPath: "/images/logos/company-logo-5.png",
+    imgPath: companyLogo5,
   },
   {
-    imgPath: "/images/logos/company-logo-6.png",
+    imgPath: companyLogo6,
   },
   {
-    imgPath: "/images/logos/company-logo-7.png",
+    imgPath: companyLogo7,
   },
   {
-    imgPath: "/images/logos/company-logo-8.png",
+    imgPath: companyLogo8,
   },
   {
-    imgPath: "/images/logos/company-logo-9.png",
+    imgPath: companyLogo9,
   },
   {
-    imgPath: "/images/logos/company-logo-10.png",
+    imgPath: companyLogo10,
   },
   {
-    imgPath: "/images/logos/company-logo-11.png",
+    imgPath: companyLogo11,
   },
 ];
 
-// 能力类型
 type Ability = {
   imgPath: string;
   title: string;
@@ -105,23 +138,22 @@ type Ability = {
 
 const abilities: Ability[] = [
   {
-    imgPath: "/images/seo.png",
+    imgPath: seoPng,
     title: "Quality Focus",
     desc: "Delivering high-quality results while maintaining attention to every detail.",
   },
   {
-    imgPath: "/images/chat.png",
+    imgPath: chatPng,
     title: "Reliable Communication",
     desc: "Keeping you updated at every step to ensure transparency and clarity.",
   },
   {
-    imgPath: "/images/time.png",
+    imgPath: timePng,
     title: "On-Time Delivery",
     desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
   },
 ];
 
-// 技术栈图片类型
 type TechStackImg = {
   name: string;
   imgPath: string;
@@ -130,27 +162,26 @@ type TechStackImg = {
 const techStackImgs: TechStackImg[] = [
   {
     name: "React Developer",
-    imgPath: "/images/logos/react.png",
+    imgPath: reactLogo,
   },
   {
     name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
+    imgPath: pythonLogo,
   },
   {
     name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
+    imgPath: nodeLogo,
   },
   {
     name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
+    imgPath: threeLogo,
   },
   {
     name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
+    imgPath: gitLogo,
   },
 ];
 
-// 技术栈3D图标类型
 type TechStackIcon = {
   name: string;
   modelPath: string;
@@ -191,7 +222,6 @@ const techStackIcons: TechStackIcon[] = [
   },
 ];
 
-// 经验卡片类型
 type ExpCard = {
   review: string;
   imgPath: string;
@@ -203,9 +233,10 @@ type ExpCard = {
 
 const expCards: ExpCard[] = [
   {
-    review: "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
+    review:
+      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+    imgPath: exp1Png,
+    logoPath: logo1Png,
     title: "Frontend Developer",
     date: "January 2023 - Present",
     responsibilities: [
@@ -215,9 +246,10 @@ const expCards: ExpCard[] = [
     ],
   },
   {
-    review: "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
+    review:
+      "Adrian's contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+    imgPath: exp2Png,
+    logoPath: logo2Png,
     title: "Full Stack Developer",
     date: "June 2020 - December 2023",
     responsibilities: [
@@ -227,9 +259,10 @@ const expCards: ExpCard[] = [
     ],
   },
   {
-    review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
+    review:
+      "Adrian's work on Appwrite's mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+    imgPath: exp3Png,
+    logoPath: logo3Png,
     title: "React Native Developer",
     date: "March 2019 - May 2020",
     responsibilities: [
@@ -240,7 +273,6 @@ const expCards: ExpCard[] = [
   },
 ];
 
-// 经验logo类型
 type ExpLogo = {
   name: string;
   imgPath: string;
@@ -248,20 +280,19 @@ type ExpLogo = {
 
 const expLogos: ExpLogo[] = [
   {
-    name: "logo1",
-    imgPath: "/images/logo1.png",
+    name: "React",
+    imgPath: reactLogo,
   },
   {
-    name: "logo2",
-    imgPath: "/images/logo2.png",
+    name: "Python",
+    imgPath: pythonLogo,
   },
   {
-    name: "logo3",
-    imgPath: "/images/logo3.png",
+    name: "Backend",
+    imgPath: nodeLogo,
   },
 ];
 
-// 推荐评价类型
 type Testimonial = {
   name: string;
   mentions: string;
@@ -274,47 +305,39 @@ const testimonials: Testimonial[] = [
     name: "Esther Howard",
     mentions: "@estherhoward",
     review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
+      "I can't say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+    imgPath: client1Png,
   },
   {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
+    name: "Ronald Richards",
+    mentions: "@ronaldrichards",
     review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
+      "Working with Adrian was a game-changer for our project. His attention to detail and commitment to quality were evident throughout the development process. Highly recommended!",
+    imgPath: client2Png,
   },
   {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
+    name: "Kristin Watson",
+    mentions: "@kristinwatson",
     review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    imgPath: "/images/client2.png",
+      "Adrian consistently delivered high-quality code and innovative solutions. He is a valuable asset to any team, bringing both technical skill and a collaborative spirit.",
+    imgPath: client3Png,
   },
   {
     name: "Marvin McKinney",
     mentions: "@marvinmckinney",
     review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
-    imgPath: "/images/client5.png",
+      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that's both modern and easy to navigate. Fantastic work overall.",
+    imgPath: client5Png,
   },
   {
     name: "Floyd Miles",
     mentions: "@floydmiles",
     review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
-    imgPath: "/images/client4.png",
-  },
-  {
-    name: "Albert Flores",
-    mentions: "@albertflores",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: "/images/client6.png",
+      "Adrian's expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He's a true professional!",
+    imgPath: client4Png,
   },
 ];
 
-// 社交媒体图片类型
 type SocialImg = {
   name: string;
   imgPath: string;
@@ -322,20 +345,20 @@ type SocialImg = {
 
 const socialImgs: SocialImg[] = [
   {
-    name: "insta",
-    imgPath: "/images/insta.png",
+    name: "Facebook",
+    imgPath: fbPng,
   },
   {
-    name: "fb",
-    imgPath: "/images/fb.png",
+    name: "Instagram",
+    imgPath: instaPng,
   },
   {
-    name: "x",
-    imgPath: "/images/x.png",
+    name: "LinkedIn",
+    imgPath: linkedinPng,
   },
   {
-    name: "linkedin",
-    imgPath: "/images/linkedin.png",
+    name: "Twitter",
+    imgPath: xPng,
   },
 ];
 

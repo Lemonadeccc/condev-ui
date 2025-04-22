@@ -90,7 +90,7 @@ section {
       @apply size-8 md:size-10 object-contain;
     }
     .slide {
-      @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
+      @apply overflow-hidden absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0;
     }
   }
 
@@ -489,7 +489,8 @@ section {
 }
 
 /* Ensure the main content container in Hero.tsx is above the canvas */
-.hero-layout > header { /* Targeting the header within hero-layout */
+.hero-layout > header {
+  /* Targeting the header within hero-layout */
   position: relative;
   z-index: 1;
   /* Add padding/margin if needed to prevent overlap or adjust positioning */
@@ -500,13 +501,21 @@ section {
 }
 
 /* Hero Text Gradient Effect */
-.hero-text h1 { /* Base style */
+.hero-text h1 {
+  /* Base style */
   /* color: white; */ /* Inherit or set default color */
   transition: color 0.3s ease; /* Optional: Smooth transition */
 }
 
-.hero-text.active h1 { /* Style when active */
-  background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff); /* Example gradient */
+.hero-text.active h1 {
+  /* Style when active */
+  background: linear-gradient(
+    90deg,
+    #ff00ff,
+    #00ffff,
+    #ffff00,
+    #ff00ff
+  ); /* Example gradient */
   background-size: 200% auto; /* Larger size for animation */
   background-clip: text;
   -webkit-background-clip: text;
@@ -516,9 +525,15 @@ section {
 }
 
 @keyframes gradient-animation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Add styles for the main app container if needed */
