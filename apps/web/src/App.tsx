@@ -1,21 +1,26 @@
+import { RouterProvider } from "react-router";
+
 import "./App.css";
 import "@condev-ui/ui/es/index.css";
 
-import { NavBar } from "./components/NavBar";
-import { Hero } from "./sections/Hero";
-import { ShaderSection } from "./sections/ShaderSection";
-import { ShowcaseSection } from "./sections/ShowcaseSection";
+// import { NavBar } from "./components/NavBar";
+// import { Hero } from "./sections/Hero";
+// import { ShaderSection } from "./sections/ShaderSection";
+// import { ShowcaseSection } from "./sections/ShowcaseSection";
+import router from "./router";
 
 function App() {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
 
-      <Hero />
+      <RouterProvider router={router} />
+      
+      {/* <Hero />
 
       <ShaderSection />
 
-      <ShowcaseSection />
+      <ShowcaseSection /> */}
     </>
   );
 

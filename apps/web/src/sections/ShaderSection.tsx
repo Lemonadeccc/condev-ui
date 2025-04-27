@@ -46,8 +46,12 @@ export const ShaderSection = () => {
   const animationRef = useRef<gsap.core.Tween | null>(null);
 
   useEffect(() => {
+    const currentDeeply = deeplyRef.current;
+    const currentSoftly = softlyRef.current;
+    const currentAnimation = animationRef.current;
+
     gsap.fromTo(
-      deeplyRef.current,
+      currentDeeply,
       { fontVariationSettings: '"wgt" 20, "wdth" 210', opacity: 0.5 },
       {
         fontVariationSettings: '"wgt" 100, "wdth" 120',
@@ -60,7 +64,7 @@ export const ShaderSection = () => {
     );
 
     gsap.fromTo(
-      softlyRef.current,
+      currentSoftly,
       { fontVariationSettings: '"wgt" 100, "wdth" 120', opacity: 1 },
       {
         fontVariationSettings: '"wgt" 20, "wdth" 210',
@@ -73,17 +77,19 @@ export const ShaderSection = () => {
     );
 
     return () => {
-      gsap.killTweensOf([deeplyRef.current, softlyRef.current]);
-      animationRef.current?.kill();
+      gsap.killTweensOf([currentDeeply, currentSoftly]);
+      currentAnimation?.kill();
     };
   }, []);
 
   useEffect(() => {
+    const currentAnimation = animationRef.current;
+
     if (sandbox) {
       sandbox.load(defaultFragmentShader);
     }
     return () => {
-      animationRef.current?.kill();
+      currentAnimation?.kill();
     };
   }, [sandbox]);
 

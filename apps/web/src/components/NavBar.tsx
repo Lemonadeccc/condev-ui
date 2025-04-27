@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 import { navLinks } from "../constants/index.ts";
 
@@ -14,11 +15,11 @@ export const NavBar = () => {
           <ul>
             {navLinks.map(({ link, name }) => (
               <li key={name} className="group">
-                <a href={link}>
+                <Link to={link}>
                   <span>{name}</span>
 
                   <span className="underline"></span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
