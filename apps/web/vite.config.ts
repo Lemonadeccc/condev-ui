@@ -17,6 +17,9 @@ export default defineConfig(({ mode }) => {
         "@model": path.resolve(__dirname, "./public/models"),
       },
     },
+    optimizeDeps: {
+      include: ['@condev-ui/ui'],
+    },
     build: {
       outDir: "dist",
       assetsDir: "assets",

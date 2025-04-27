@@ -45,19 +45,19 @@ type NavLink = {
 const navLinks: NavLink[] = [
   {
     name: "Home",
-    link: "#home",
+    link: "/",
   },
   {
     name: "Docs",
-    link: "#docs",
+    link: "docs",
   },
   {
     name: "Components",
-    link: "#components",
+    link: "components",
   },
   {
     name: "Storybook",
-    link: "#storybook",
+    link: "storybook",
   },
 ];
 
