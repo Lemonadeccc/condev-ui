@@ -4,7 +4,7 @@ import "./index.css";
 
 import { ButtonProps } from "./types";
 
-export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
+const Button = (props: ButtonProps) => {
   const {
     variant = "filled",
     size = "medium",
@@ -32,3 +32,5 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
     </button>
   );
 };
+
+export { Button };
