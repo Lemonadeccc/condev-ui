@@ -1,38 +1,11 @@
-import React from "react";
+import React, { type ButtonHTMLAttributes } from "react";
 
-export interface ButtonProps {
-  size?: "small" | "medium" | "large";
-}
-
-export const buttonVariants = [
-  "filled",
-  "light",
-  "outline",
-  "transparent",
-  "danger",
-] as const;
-
-export type ButtonVariant = (typeof buttonVariants)[number];
-
-export interface ButtonProps {
-  /**
-   * The variant of the button
-   */
-  variant?: ButtonVariant;
-  /**
-   * The size of the button
-   */
-  size?: "small" | "medium" | "large";
-  /**
-   * Whether the button is disabled
-   */
+export interface ButtonProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type"> {
+  htmlType?: "button" | "submit" | "reset";
   disabled?: boolean;
-  /**
-   * The children of the button
-   */
-  children?: React.ReactNode;
-  /**
-   * The function to be called when the button is clicked
-   */
-  onClick?: () => void;
+  loading?: boolean;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  ref?: React.Ref<HTMLButtonElement>;
+  type?: "fill" | "outline";
 }
