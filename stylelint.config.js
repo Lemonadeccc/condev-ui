@@ -19,6 +19,7 @@ export default {
       true,
       {
         ignoreAtRules: [
+          "theme",
           "tailwind",
           "apply",
           "variants",

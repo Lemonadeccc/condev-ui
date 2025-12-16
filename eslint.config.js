@@ -5,17 +5,29 @@ import tseslint from "typescript-eslint";
 import js from "@eslint/js";
 
 export default tseslint.config([
+  // Global ignores - must be in a separate config object
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ["**/*.{js,jsx,ts,tsx}", "**/**/*.{js,jsx,ts,tsx}"],
     ignores: [
       "apps/**/dist/**",
       "**/build/**",
       "**/es/**",
       "**/tests/**",
       "**/dist/**",
-      "**/*.js",
+      "script/**/*.js",
+      "apps/**/.next/**",
+      "apps/**/out/**",
+      "apps/**/build/**",
+      "apps/**/next-env.d.ts",
+      "**/*.config.js",
+      "**/node_modules/**",
+      "**/public/**/*.min.js",
+      "apps/**/public/**",
+      "apps/site/app/globals.css",
     ],
+  },
+  {
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ["**/*.{js,jsx,ts,tsx}"],
     rules: {
       "no-console": "error",
       "simple-import-sort/imports": [
@@ -47,8 +59,4 @@ export default tseslint.config([
       "simple-import-sort": importSort,
     },
   },
-  {
-    files: ["**/*.js"],
-  },
-]
-);
+]);

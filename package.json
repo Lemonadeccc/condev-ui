@@ -14,6 +14,7 @@
     "dev": "turbo dev",
     "build": "turbo build",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "lint:style": "stylelint \"{packages,apps}/**/*.css\"",
     "spellcheck": "cspell lint --dot --gitignore --color --cache --show-suggestions \"(packages|apps)/**/*.@(html|js|cjs|mjs|ts|tsx|css|scss|md)\"",
     "test": "vitest run --silent",
