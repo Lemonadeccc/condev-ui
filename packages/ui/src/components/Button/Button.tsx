@@ -1,36 +1,26 @@
-import React from "react";
+"use client"
 
-import "./index.css";
+import React, { forwardRef, MouseEventHandler,PropsWithChildren } from 'react';
 
-import { ButtonProps } from "./types";
+import type { ButtonProps } from './types'
 
-const Button = (props: ButtonProps) => {
-  const {
-    variant = "filled",
-    size = "medium",
-    disabled,
-    children,
-    onClick,
-    ...rest
-  } = props;
-
-  const baseClass = "btn";
-  const variantClass = `btn-${variant}`;
-  const sizeClass = `btn-${size}`;
-  const disabledClass = disabled ? "btn-disabled" : "";
-
-  const buttonClass = `${baseClass} ${variantClass} ${sizeClass} ${disabledClass}`;
+function _Button(props: PropsWithChildren<ButtonProps>, ref: React.Ref<HTMLButtonElement> | undefined) {
+  const { children, htmlType = 'button', disabled, loading, onClick, ...restProps } = props;
+  const handleClick: MouseEventHandler<HTMLButtonElement> = (event): void => {
+    if (loading || disabled) {
+      event.preventDefault();
+      return;
+    }
+    onClick?.(event)
+  }
 
   return (
-    <button
-      className={buttonClass}
-      disabled={disabled}
-      onClick={onClick}
-      {...rest}
-    >
+    <button {...restProps} ref={ref} type={htmlType} disabled={disabled} onClick={handleClick}>
       {children}
     </button>
-  );
-};
+  )
+}
 
-export { Button };
+const ForwardRefButton = forwardRef<HTMLButtonElement, PropsWithChildren<ButtonProps>>(_Button)
+
+export const Button = ForwardRefButton as typeof ForwardRefButton
