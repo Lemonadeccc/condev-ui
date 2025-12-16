@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-white-50: #d9ecff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes word-slider {
+  0% {
+    transform: translateY(0.5%);
+  }
+
+  12.5% {
+    transform: translateY(-12.5%);
+  }
+
+  25% {
+    transform: translateY(-25%);
+  }
+
+  37.5% {
+    transform: translateY(-37.5%);
+  }
+
+  50% {
+    transform: translateY(-50%);
+  }
+
+  62.5% {
+    transform: translateY(-62.5%);
+  }
+
+  75% {
+    transform: translateY(-75%);
+  }
+
+  87.5% {
+    transform: translateY(-87.5%);
+  }
+}
+
+@keyframes rotating-border-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Colorful Icon Filters */
+.icon-filter {
+  filter: brightness(0) saturate(100%);
+}
+
+.icon-ideas {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(89%) saturate(2498%) hue-rotate(165deg) brightness(101%) contrast(101%);
+}
+
+.icon-concepts {
+  filter: brightness(0) saturate(100%) invert(45%) sepia(95%) saturate(4234%) hue-rotate(270deg) brightness(99%) contrast(104%);
+}
+
+.icon-designs {
+  filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(7467%) hue-rotate(335deg) brightness(100%) contrast(101%);
+}
+
+.icon-code {
+  filter: brightness(0) saturate(100%) invert(73%) sepia(52%) saturate(1815%) hue-rotate(48deg) brightness(101%) contrast(102%);
+}
