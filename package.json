@@ -25,7 +25,7 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "publish:ui": "np --no-publish && npm publish",
     "workflow": "node ./script/check-act.js && act",
-    "check": "pnpm lint && pnpm lint:style && pnpm spellcheck && pnpm test"
+    "check": "pnpm lint:fix && pnpm lint && pnpm lint:style && pnpm spellcheck && pnpm test"
   },
   "config": {
     "commitizen": {
