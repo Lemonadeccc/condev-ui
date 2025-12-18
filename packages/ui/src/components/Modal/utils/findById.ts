@@ -1,0 +1,4 @@
+import type { ModalProps } from "../types";
+
+export const findById = (arr: ModalProps[], id: ModalProps["id"]) =>
+  arr.find((item) => item.id === id);

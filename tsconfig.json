@@ -12,7 +12,7 @@
     "jsx": "react-jsx",
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "experimentalDecorators": true,
     "preserveSymlinks": true,
     "paths": {

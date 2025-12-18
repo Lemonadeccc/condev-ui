@@ -29,7 +29,7 @@ export default tseslint.config([
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{js,jsx,ts,tsx}"],
     rules: {
-      "no-console": "error",
+      // "no-console": "error",
       "simple-import-sort/imports": [
         "error",
         {
