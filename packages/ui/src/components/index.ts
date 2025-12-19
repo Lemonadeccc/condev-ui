@@ -1,5 +1,6 @@
 export * from "./Button";
 export * from "./Calendar";
+export * from "./Checkbox";
 export * from "./Grid";
 export * from "./Grid";
 export * from "./Link";
