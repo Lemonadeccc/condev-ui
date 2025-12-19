@@ -39,3 +39,4 @@ autodocs
 contants
 hoooks
 shadergradient
+checkboxgroup
