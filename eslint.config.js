@@ -29,7 +29,6 @@ export default tseslint.config([
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{js,jsx,ts,tsx}"],
     rules: {
-      // "no-console": "error",
       "simple-import-sort/imports": [
         "error",
         {
@@ -44,6 +43,7 @@ export default tseslint.config([
         },
       ],
       "simple-import-sort/exports": "error",
+      "@typescript-eslint/no-explicit-any": "off",
     },
     languageOptions: {
       globals: {
