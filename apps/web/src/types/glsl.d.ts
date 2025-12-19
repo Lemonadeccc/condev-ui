@@ -3,7 +3,7 @@ declare global {
   class GlslCanvas {
     gl: WebGLRenderingContext | null;
     canvas: HTMLCanvasElement | null;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     
     uniforms: Record<string, any>; // Basic type for uniforms object
 
     constructor(
