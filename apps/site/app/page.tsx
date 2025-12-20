@@ -39,7 +39,7 @@ export default function Home() {
           </p>
 
           <Link
-            href="/component"
+            href="/button"
             className="pointer-events-auto md:w-60 md:h-10 w-40 h-8 text-xs md:t-sm tracking-[0.2em] uppercase border border-white rounded-full flex items-center justify-center transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.6)]"
           >
             <span>SEE THE PROJECT</span>
