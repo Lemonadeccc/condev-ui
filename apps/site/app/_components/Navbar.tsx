@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <header className="fixed w-[100%] text-white transition-all duration-300 ease-in-out" >
       <div className='flex justify-between items-center w-[100%] p-5 md:w-[700px] md:mx-auto lg:w-[950px] xl:w-[1200px]'>
-        <Link className='text-2xl font-bold' href="#hero">CONDEV</Link>
+        <Link className='text-2xl font-bold' href="/">CONDEV</Link>
 
         <nav>
           <ul className='flex items-center space-x-5 md:space-x-10'>

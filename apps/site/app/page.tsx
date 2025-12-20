@@ -14,7 +14,7 @@ const words: string[] = [
 export default function Home() {
   return (
     <>
-      <section className="relative top-[72px] w-[100%] h-[calc(100vh-72px)] flex flex-col justify-center items-center text-white">
+      <section className="w-full h-screen flex flex-col justify-center items-center text-white">
         <div className="flex flex-col justify-center text-[30px] md:text-[60px] font-semibold relative z-10 pointer-events-none">
           <h1>
             Turning
