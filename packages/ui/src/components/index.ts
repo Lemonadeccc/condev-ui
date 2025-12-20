@@ -7,3 +7,4 @@ export * from "./Link";
 export * from "./Modal";
 export * from "./Radio";
 export * from "./Toast";
+export * from "./VerticalMenu";

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 
-import Background from "./components/Background";
-import Navbar from './components/Navbar'
+import Background from "./_components/Background";
+import Navbar from './_components/Navbar'
 
 export const metadata: Metadata = {
   title: "condev-ui",
@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="relative">
         <Background />
-        <div className="relative z-10">
+        <div className="relative z-1">
           <Navbar />
           {children}
         </div>
