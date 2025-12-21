@@ -7,9 +7,11 @@
   "scripts": {
     "dev:ui": "pnpm --filter @condev-ui/ui dev",
     "dev:web": "pnpm --filter @condev-ui/web dev",
+    "dev:site": "pnpm --filter @condev-ui/site dev",
     "dev:graph": "turbo dev --graph",
     "build:ui": "pnpm --filter @condev-ui/ui build",
     "build:web": "pnpm --filter @condev-ui/web build",
+    "build:site": "pnpm --filter @condev-ui/site build",
     "build:graph": "turbo build --graph",
     "dev": "turbo dev",
     "build": "turbo build",
