@@ -7,7 +7,7 @@ nixPkgs = ["nodejs_22", "pnpm"]
 cmds = ["pnpm install --frozen-lockfile"]
 
 [phases.build]
-cmds = ["pnpm exec turbo run build --filter=site"]
+cmds = ["pnpm exec turbo run build"]
 
 [start]
-cmd = "pnpm --filter site start"
+cmd = "pnpm --filter @condev-ui/site start"
