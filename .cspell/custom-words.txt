@@ -42,3 +42,4 @@ shadergradient
 checkboxgroup
 verticalmenu
 nixPkgs
+iconfont

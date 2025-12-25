@@ -1,4 +1,4 @@
-import { Button, Calendar } from "@condev-ui/ui";
+// import { Button, Calendar } from "@condev-ui/ui";
 
 import { NavBar } from "../../components/NavBar";
 
@@ -7,9 +7,9 @@ const Docs = () => {
     <>
       <NavBar />
       <div className="pt-[120px]">
-        <Button>文档页面按钮</Button>
+        {/* <Button>文档页面按钮</Button>
 
-        <Calendar />
+        <Calendar /> */}
 
 
       </div>
