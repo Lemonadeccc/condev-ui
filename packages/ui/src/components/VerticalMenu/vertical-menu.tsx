@@ -25,7 +25,8 @@ export const VerticalMenuRoot = forwardRef<HTMLDivElement, React.PropsWithChildr
       if (Array.isArray(finalSelectedValuePath) && Array.isArray(keyPath) && finalSelectedValuePath.length === keyPath.length && finalSelectedValuePath.every((v, i) => v === keyPath[i])) {
         return
       }
-      setFinalOpenedSubMenuValues(keyPath)
+      setFinalSelectedValuePath(keyPath)
+      setFinalOpenedSubMenuValues(keyPath.slice(0, -1))
     }
 
     const onClickSubMenuContext = (
