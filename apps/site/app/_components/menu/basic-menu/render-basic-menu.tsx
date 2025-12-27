@@ -75,7 +75,7 @@ export function renderBasicMenu({ data = [], subMenuClassName }: BasicMenuProps)
                 <VerticalMenu.MenuItem
                   key={childFallbackValue}
                   value={childValue}
-                  className="w-full cursor-pointer pr-6 py-2 hover:bg-white/10 text-sm transition-colors"
+                  className="w-full cursor-pointer pl-10 pr-6 py-2 hover:bg-white/10 text-sm transition-colors"
                   selectedClassName="text-white bg-white/10 border-r-2 border-white"
                   notSelectedClassName="text-white/60"
                   onClick={subItem.onClick}

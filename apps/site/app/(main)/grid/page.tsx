@@ -6,7 +6,7 @@ import { Grid } from '@condev-ui/ui'
 
 export default function Page() {
   return (
-    <div className="space-y-6">
+    <div className="min-w-0 space-y-6 py-4">
       <h1 className="text-4xl font-bold">Grid</h1>
       <p className="text-white/80">A responsive grid layout component.</p>
 

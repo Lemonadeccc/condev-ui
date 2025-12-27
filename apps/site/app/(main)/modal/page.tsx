@@ -25,7 +25,7 @@ export default function Page() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="min-w-0 space-y-6 py-4">
       <h1 className="text-4xl font-bold">Modal</h1>
       <p className="text-white/80">Dialogs for alerts, confirmations, or other content.</p>
 
