@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react'
 
 interface NavLink {
@@ -31,18 +30,19 @@ const navLinks: NavLink[] = [
 ];
 
 export default function Navbar() {
-  const [isTransparent, setIsTransparent] = useState(true)
+  const [isScrolled, setIsScrolled] = useState(false)
 
-  const pathName = usePathname()
-
-	  useEffect(() => {
-	    setIsTransparent(pathName === '/')
-	  }, [pathName])
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 text-white transition-all duration-300 ease-in-out ${!isTransparent
-        ? 'bg-black border-b border-white/10'
+      className={`fixed inset-x-0 top-0 z-50 text-white transition-all duration-300 ease-in-out ${isScrolled
+        ? 'bg-black/80 backdrop-blur supports-[backdrop-filter]:bg-black/60'
         : 'bg-transparent'
         }`}
     >
