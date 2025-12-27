@@ -6,7 +6,7 @@ import { VerticalMenu } from '@condev-ui/ui'
 
 export default function Page() {
   return (
-    <div className="space-y-6">
+    <div className="min-w-0 space-y-6 py-4">
       <h1 className="text-4xl font-bold">VerticalMenu</h1>
       <p className="text-white/80">A vertical navigation menu.</p>
 
@@ -17,7 +17,9 @@ export default function Page() {
               Item 1
             </VerticalMenu.MenuItem>
             <VerticalMenu.Submenu value="sub1">
-              <VerticalMenu.SubMenuContent className="p-2 hover:bg-white/10 cursor-pointer">Submenu 1</VerticalMenu.SubMenuContent>
+              <VerticalMenu.SubMenuContent className="p-2 hover:bg-white/10 cursor-pointer">
+                Submenu 1
+              </VerticalMenu.SubMenuContent>
               <VerticalMenu.SubMenuList className="pl-4">
                 <VerticalMenu.MenuItem value="subitem1" className="p-2 hover:bg-white/10 cursor-pointer">
                   Sub Item 1

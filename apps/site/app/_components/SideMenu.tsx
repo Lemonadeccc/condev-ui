@@ -22,7 +22,7 @@ export const SideMenu = () => {
   const isDocs = pathname === '/docs'
 
   return (
-    <div className="w-full text-white py-4">
+    <div className="w-full text-white py-8">
       <Menu
         data={[
           {

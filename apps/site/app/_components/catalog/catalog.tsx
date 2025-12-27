@@ -2,6 +2,8 @@
 
 import React from 'react'
 
+import { cn } from '../_utils'
+
 export interface NestedAnchorLinkProps {
   level: number
   text: string
@@ -30,8 +32,8 @@ function renderLinks(items?: NestedAnchorLinkProps[]) {
 
 export function Catalog({ items }: { items: NestedAnchorLinkProps[] }) {
   return (
-    <aside className="sticky top-[72px] hidden xl:flex xl:w-56 shrink-0 h-[calc(100vh-72px)] pt-6">
-      <div className="overflow-y-auto pr-2 w-full">{renderLinks(items)}</div>
-    </aside>
+    <nav className={cn('w-full')} aria-label="Catalog">
+      {renderLinks(items)}
+    </nav>
   )
 }

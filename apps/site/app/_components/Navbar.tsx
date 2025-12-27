@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 interface NavLink {
   name: string;
@@ -27,9 +30,23 @@ const navLinks: NavLink[] = [
 ];
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header className="fixed w-[100%] text-white transition-all duration-300 ease-in-out" >
-      <div className='flex justify-between items-center w-[100%] p-5 md:w-[700px] md:mx-auto lg:w-[950px] xl:w-[1200px]'>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 text-white transition-all duration-300 ease-in-out ${isScrolled
+        ? 'bg-black/80 backdrop-blur supports-[backdrop-filter]:bg-black/60'
+        : 'bg-transparent'
+        }`}
+    >
+      <div className="mx-5 flex items-center justify-between p-5">
         <Link className='text-2xl font-bold' href="/">CONDEV</Link>
 
         <nav>
