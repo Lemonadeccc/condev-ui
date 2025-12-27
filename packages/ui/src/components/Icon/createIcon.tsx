@@ -13,7 +13,7 @@ export function createIcon(options: CreateIconOptions) {
   const { paths, iconProps = {}, viewBox = '0 0 48 48' } = options;
 
   return forwardRef<SVGSVGElement, IconProps>((props, ref) => (
-    <Icon {...iconProps} ref={ref} viewBox={viewBox}>
+    <Icon {...iconProps} {...props} ref={ref} viewBox={viewBox}>
       {paths}
     </Icon>
   ))

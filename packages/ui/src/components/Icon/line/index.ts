@@ -6,6 +6,8 @@ export * from "./close-line";
 export * from "./code-line";
 export * from "./down-line";
 export * from "./edit-line";
+export * from "./home-line";
 export * from "./left-line";
+export * from "./loading-line";
 export * from "./right-line";
 export * from "./up-line";

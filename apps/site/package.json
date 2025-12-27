@@ -6,13 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "catalog": "node scripts/create-catalog.mjs"
   },
   "dependencies": {
     "@babel/standalone": "^7.28.5",
     "@codemirror/lang-css": "^6.3.1",
     "@codemirror/lang-javascript": "^6.2.4",
     "@condev-ui/ui": "workspace:*",
+    "@mdx-js/loader": "3.1.1",
+    "@mdx-js/react": "3.1.1",
+    "@next/mdx": "16.0.10",
     "@react-three/fiber": "^9.1.2",
     "@shadergradient/react": "^2.4.20",
     "@uiw/codemirror-theme-material": "^4.25.4",
@@ -21,6 +25,7 @@
     "camera-controls": "^3.1.2",
     "clsx": "^2.1.1",
     "framer-motion": "^11.15.0",
+    "gsap": "^3.12.7",
     "next": "16.0.10",
     "tailwind-merge": "^3.4.0",
     "three": "^0.175.0",
@@ -33,6 +38,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/babel__standalone": "^7.1.9",
+    "@types/mdx": "2.0.13",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

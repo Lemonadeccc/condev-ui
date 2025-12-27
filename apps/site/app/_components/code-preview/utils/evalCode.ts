@@ -1,15 +1,17 @@
-import type { ComponentType } from "react";
+import type { ComponentType, ReactElement } from 'react'
 
 export const evalCode = (
   code: string,
-  dependencies: Record<string, any>
-): ComponentType => {
-  const args = [];
-  const argv: any[] = [];
-  Object.keys(dependencies).map((key) => {
-    args.push(key);
-    argv.push(dependencies[key]);
-  });
-  args.push(code || "");
-  return new Function(...args)(...argv);
-};
+  dependencies: Record<string, unknown>
+): ComponentType | ReactElement | null | undefined => {
+  const args: string[] = []
+  const argv: unknown[] = []
+
+  for (const key of Object.keys(dependencies)) {
+    args.push(key)
+    argv.push(dependencies[key])
+  }
+
+  args.push(code || '')
+  return new Function(...args)(...argv) as ComponentType | ReactElement | null | undefined
+}

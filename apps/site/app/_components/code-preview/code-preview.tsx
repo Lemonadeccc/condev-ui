@@ -3,9 +3,10 @@
 import { LayoutGroup } from 'framer-motion'
 import React from 'react'
 
-// import * as CdButtons from '@/button/tailwind-button/export-button';
-// import * as CdComponent from '@/_components/ui-lib';
 import * as Cd from '@condev-ui/ui'
+
+import * as CdComponent from '@/app/_components/ui-lib';
+import * as CdButtons from '@/app/(main)/button/tailwind-button';
 
 // import { toastBottomStackStore,toastBottomStore, toastStore } from '@/layout'
 import { cn } from '../_utils';
@@ -17,8 +18,8 @@ import type { CodePreviewProps } from './interface'
 const CdUI = {
   ...Cd,
   cn,
-  // ...CdButtons,
-  // ...CdComponent,
+  ...CdButtons,
+  ...CdComponent,
   // toastStore,
   // toastBottomStore,
   // toastBottomStackStore,
