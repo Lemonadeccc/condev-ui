@@ -1,0 +1,74 @@
+import {
+  ImageTypography,
+  AvatarM,
+  CodeBlock,
+  H1,
+  Divide,
+  H3Sub,
+  Code,
+} from "@/app/_components/typography";
+import { IconMuiLogo, Button } from "@condev-ui/ui";
+import {
+  BasicExample,
+  CheckedExample,
+  GroupExample,
+  ButtonExample,
+} from "./example";
+
+{/* ### 基础多选框 */}
+
+<H3Sub
+  sub={
+    <>
+      <div className="mb-2"><Code>radio</Code> 组件主要有三种状态，分别是： <Code>default</Code>、 <Code>disabled</Code>、<Code>readonly</Code>。然后分别每种状态有选中和未选中的样式。 </div>
+      <div>需要注意，HTML 标准并不支持 <Code>readonly</Code> 属性，这是组件单独封装的。</div>
+    </>
+
+}
+
+> {'基础多选框'}</H3Sub>
+
+<BasicExample />
+
+{/* ### 受控按钮 */}
+
+<H3Sub
+  sub={
+    <>
+      <Code>checked</Code> 属性控制是否选中
+    </>
+  }
+>
+  {"受控按钮"}
+</H3Sub>
+<CheckedExample />
+
+{/* ### 单选框 Group */}
+
+<H3Sub
+  sub={
+    <>
+      将多个 <Code>radio</Code> 组件放在一个 <Code>radio-group</Code>{" "}
+      组件中，注意要设置 <Code>defaultValue</Code> 或者
+      <Code>value</Code> 属性才能实现单选框组的功能。
+    </>
+  }
+>
+  {"单选框 Group"}
+</H3Sub>
+<GroupExample />
+
+{/* ### Button Radio */}
+
+<H3Sub
+  sub={
+    <>
+      属于自定义的 <Code>radio</Code>{" "}
+      组件。其实还可以加入背景移动的动画，我在创意案例里面用{" "}
+      <Code>motion/react</Code> 来实现一下。
+    </>
+  }
+>
+  {"Button Radio"}
+</H3Sub>
+<ButtonExample />

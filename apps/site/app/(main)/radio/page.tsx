@@ -1,22 +1,9 @@
-'use client'
-
-import React from 'react'
-
-import { Radio } from '@condev-ui/ui'
+import { RadioMarkdown } from './markdown/read'
 
 export default function Page() {
   return (
-    <div className="min-w-0 space-y-6 py-4">
-      <h1 className="text-4xl font-bold">Radio</h1>
-      <p className="text-white/80">A set of options where only one can be selected.</p>
-
-      <div className="p-8 border border-white/10 rounded-lg flex gap-4 items-center justify-center bg-white/5">
-        <Radio.Group defaultValue="1" className="flex gap-4">
-          <Radio.Root value="1">Option 1</Radio.Root>
-          <Radio.Root value="2">Option 2</Radio.Root>
-          <Radio.Root value="3">Option 3</Radio.Root>
-        </Radio.Group>
-      </div>
+    <div className="w-full min-w-0">
+      <RadioMarkdown />
     </div>
   )
 }
