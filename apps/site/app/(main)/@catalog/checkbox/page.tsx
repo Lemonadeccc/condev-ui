@@ -1,3 +1,7 @@
+import { Catalog } from '@/app/_components/catalog'
+
+import { catalogList } from '../../checkbox/markdown/read'
+
 export default function Page() {
-  return null
+  return <Catalog items={catalogList} />
 }
