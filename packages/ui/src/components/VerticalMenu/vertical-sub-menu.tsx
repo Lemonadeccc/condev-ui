@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef,useContext } from 'react';
+import React, { forwardRef, useContext } from 'react';
 
 import { hasIntersection } from '../utils';
 

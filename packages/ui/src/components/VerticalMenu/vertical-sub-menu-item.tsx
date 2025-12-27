@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef,useContext } from 'react';
+import React, { forwardRef, useContext } from 'react';
 
 import { cn, hasIntersection } from '../utils';
 
@@ -15,7 +15,8 @@ export const VerticalMenuItem = forwardRef<HTMLDivElement, React.PropsWithChildr
   const { keyPath } = useContext(SubMenuContext);
   const nextKeyPath = keyPath ? [...keyPath, value] : [value];
 
-  const isSelected = hasIntersection(nextKeyPath, finalSelectedValuePath);
+  const selectedLeafValue = Array.isArray(finalSelectedValuePath) ? finalSelectedValuePath[finalSelectedValuePath.length - 1] : undefined;
+  const isSelected = hasIntersection([value], selectedLeafValue ? [selectedLeafValue] : []);
 
   const mergeOnClick = (e) => {
     e.stopPropagation();
