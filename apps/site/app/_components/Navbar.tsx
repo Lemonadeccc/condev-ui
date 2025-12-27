@@ -17,7 +17,7 @@ const navLinks: NavLink[] = [
   },
   {
     name: "Components",
-    link: "/button",
+    link: "/components",
   },
   {
     name: "Contact",

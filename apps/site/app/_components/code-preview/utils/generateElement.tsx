@@ -14,10 +14,23 @@ interface executeCodeProps {
 }
 
 const wrapReturn = (code: string) => `${code}; return App`
-const replaceUseStrict = (code: string) => code.replace("'use strict'", '')
-const trimCode = (code: string) => code.trim().replace(/;$/, '')
+const replaceUseStrict = (code: string) =>
+  code.replace(/^\s*(?:\/\*[\s\S]*?\*\/\s*|\/\/[^\n]*\n\s*)*(['"])use strict\1;?\s*/, '')
+const trimCode = (code: string) => (code ?? '').trim().replace(/;$/, '')
+
+const createThrowingComponent = (error: Error): ComponentType => {
+  const Thrower = () => {
+    throw error
+  }
+  return Thrower
+}
 
 export const generateElement = ({ input, dependencies, errorCallback }: executeCodeProps): ComponentType => {
-  const transformed = compose<string>(wrapReturn, replaceUseStrict, trimCode, babelTransform, trimCode)(input);
-  return errorBoundary(evalCode(transformed, { React, ...dependencies }), errorCallback);
+  try {
+    const transformed = compose<string>(wrapReturn, trimCode, replaceUseStrict, babelTransform, trimCode)(input)
+    return errorBoundary(evalCode(transformed, { ...dependencies, React }), errorCallback)
+  } catch (error) {
+    const normalizedError = error instanceof Error ? error : new Error(String(error))
+    return errorBoundary(createThrowingComponent(normalizedError), errorCallback)
+  }
 };
