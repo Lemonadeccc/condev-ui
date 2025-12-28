@@ -54,23 +54,14 @@ export default function Navbar() {
             {
               navLinks.map(({ link, name, isExternal }) => (
                 <li key={name}>
-                  {isExternal ? (
-                    <a
-                      href={link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative inline-block after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                    >
-                      {name}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link}
-                      className="relative inline-block after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-                    >
-                      {name}
-                    </Link>
-                  )}
+                  <Link
+                    href={link}
+                    target={isExternal ? '_blank' : undefined}
+                    rel={isExternal ? 'noopener noreferrer' : undefined}
+                    className="relative inline-block after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+                  >
+                    {name}
+                  </Link>
                 </li>
               ))
             }
