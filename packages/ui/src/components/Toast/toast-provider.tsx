@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence } from 'framer-motion';
-import React, { useState,useSyncExternalStore } from 'react'
+import React, { useState, useSyncExternalStore } from 'react'
 
 import { Portal } from '../Portal';
 

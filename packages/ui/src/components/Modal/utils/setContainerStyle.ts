@@ -16,7 +16,6 @@ export const setContainerStyle = ({
         container.style.width || "100%"
       } - ${containerScrollBarWidth}px)`;
     }
-
     originContainerStyle.current.overflow = originStyle.overflow;
     container.style.overflow = "hidden";
   }

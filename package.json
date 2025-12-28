@@ -13,6 +13,7 @@
     "build:web": "pnpm --filter @condev-ui/web build",
     "build:site": "pnpm --filter @condev-ui/site build",
     "build:graph": "turbo build --graph",
+    "catalog": "pnpm --filter @condev-ui/site catalog",
     "dev": "turbo dev",
     "build": "turbo build",
     "lint": "eslint .",

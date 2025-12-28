@@ -1,8 +1,80 @@
 @import "tailwindcss";
 
+@config "../tailwind.config.js"; /* stylelint-disable-line at-rule-no-unknown */
+
 :root {
   --background: #fff;
   --foreground: #171717;
+
+  /* Z-Index */
+  --z-index-affix: 100;
+  --z-index-popup: 1000;
+  --z-index-drawer: 1100;
+  --z-index-modal: 1200;
+  --z-index-tooltip: 1300;
+  --z-index-message: 1400;
+  --z-index-notification: 1500;
+  --z-index-image-preview: 1600;
+
+  /* Border Radius */
+  --border-radius-sm: 0.125rem;
+  --border-radius-md: 0.375rem;
+  --border-radius-lg: 0.5rem;
+
+  /* Colors - Base */
+  --border-color: #e5e7eb;
+  --border-color-50: #f9fafb;
+  --border-color-100: #f3f4f6;
+  --border-color-200: #e5e7eb;
+  --border-color-800: #1f2937;
+
+  /* Colors - Text */
+  --text-color: #1f2937;
+  --text-color-50: #f9fafb;
+  --text-color-400: #9ca3af;
+  --text-color-500: #6b7280;
+  --text-color-600: #4b5563;
+  --text-color-reverse: #fff;
+
+  /* Colors - Background */
+  --bg-color: #fff;
+  --bg-color-50: #f9fafb;
+  --bg-color-100: #f3f4f6;
+  --bg-color-200: #e5e7eb;
+  --bg-color-800: #1f2937;
+  --bg-color-reverse: #1f2937;
+
+  /* Tailwind Colors Variables for Reference in Tailwind Config */
+  --tw-color-blue-600: #2563eb;
+  --tw-color-blue-500: #3b82f6;
+  --tw-color-blue-200: #bfdbfe;
+  --tw-color-blue-700: #1d4ed8;
+  --tw-color-blue-300: #93c5fd;
+
+  /* Tailwind Colors - Orange */
+  --tw-color-orange-500: #f97316;
+  --tw-color-orange-400: #fb923c;
+  --tw-color-orange-200: #fed7aa;
+  --tw-color-orange-600: #ea580c;
+  --tw-color-orange-300: #fdba74;
+
+  /* Tailwind Colors - Red */
+  --tw-color-red-600: #dc2626;
+  --tw-color-red-500: #ef4444;
+  --tw-color-red-200: #fecaca;
+  --tw-color-red-700: #b91c1c;
+  --tw-color-red-300: #fca5a5;
+
+  /* Tailwind Colors - Lime */
+  --tw-color-lime-500: #84cc16;
+  --tw-color-lime-400: #a3e635;
+  --tw-color-lime-200: #d9f99d;
+  --tw-color-lime-600: #65a30d;
+  --tw-color-lime-300: #bef264;
+}
+
+.z-modal {
+  z-index: var(--z-index-modal);
 }
 
 @theme inline {
