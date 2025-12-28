@@ -6,6 +6,7 @@ import React from 'react'
 import { Menu, MenuItem, SubMenu } from './menu/page-menu'
 
 const componentsList = [
+  "Alert",
   "Button",
   "Checkbox",
   "Grid",
