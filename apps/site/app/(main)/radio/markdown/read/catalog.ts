@@ -1,19 +1,19 @@
-// Auto-generated catalog from traditional-example.mdx
+// Auto-generated catalog from app/(main)/radio/markdown/read/radio-markdown.mdx
 export const catalogList = [
   {
-    level: 3,
-    text: '基础多选框',
+    "level": 3,
+    "text": "基础多选框"
   },
   {
-    level: 3,
-    text: '受控按钮',
+    "level": 3,
+    "text": "受控按钮"
   },
   {
-    level: 3,
-    text: '单选框 Group',
+    "level": 3,
+    "text": "单选框 Group"
   },
   {
-    level: 3,
-    text: 'Button Radio',
-  },
+    "level": 3,
+    "text": "Button Radio"
+  }
 ];

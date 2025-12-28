@@ -1,0 +1,101 @@
+import {
+  ImageTypography,
+  AvatarM,
+  CodeBlock,
+  H1,
+  Divide,
+  H3Sub,
+  Code,
+} from "@/app/_components/typography";
+import {
+  BasicExample,
+  CardLinkExample,
+  DisabledExample,
+  IconLinkExample,
+  NewTabExample,
+  RefExample,
+} from "./read";
+
+<H1 subheading="超链接组件，基于 HTML <a> 封装并提供 disabled 等能力">Link</H1>
+
+{/* ### 基本用法 */}
+
+<H3Sub
+  sub={
+    <>
+      最简单的用法，直接传入 <Code>href</Code> 与样式即可。
+    </>
+  }
+>
+  {"基本用法"}
+</H3Sub>
+<BasicExample />
+
+<H3Sub
+  sub={
+    <>
+      通过 <Code>disabled</Code> 可以阻止默认跳转，同时不会触发{" "}
+      <Code>onClick</Code>
+      回调。
+    </>
+  }
+>
+  {"禁用状态"}
+</H3Sub>
+<DisabledExample />
+
+{/* ### 新标签页打开 */}
+
+<H3Sub
+  sub={
+    <>
+      通过设置 <Code>target</Code> 与 <Code>rel</Code>
+      ，可以在新标签页打开外部链接。
+    </>
+  }
+>
+  {"新标签页打开"}
+</H3Sub>
+<NewTabExample />
+
+{/* ### 带图标的链接 */}
+
+<H3Sub
+  sub={
+    <>
+      通过 <Code>inline-flex</Code> / <Code>gap</Code>{" "}
+      等样式把图标与文本放在一起。
+    </>
+  }
+>
+  {"带图标的链接"}
+</H3Sub>
+<IconLinkExample />
+
+{/* ### 块级 / 卡片链接 */}
+
+<H3Sub
+  sub={
+    <>
+      让 <Code>Link</Code> 作为块级元素（<Code>block</Code>），配合边框/hover
+      样式即可实现“整块可点”的卡片链接。
+    </>
+  }
+>
+  {"块级 / 卡片链接"}
+</H3Sub>
+<CardLinkExample />
+
+{/* ### Ref 使用 */}
+
+<H3Sub
+  sub={
+    <>
+      <Code>Link</Code> 支持 <Code>ref</Code>（<Code>forwardRef</Code>
+      ），便于聚焦等操作。
+    </>
+  }
+>
+  {"Ref 使用"}
+</H3Sub>
+<RefExample />
