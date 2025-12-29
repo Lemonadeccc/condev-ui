@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@config "../tailwind.config.js"; /* stylelint-disable-line at-rule-no-unknown */
+@config "../tailwind.config.ts";
 
 :root {
   --background: #fff;
