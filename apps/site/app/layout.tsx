@@ -5,6 +5,7 @@ import "./globals.css";
 import Background from "./_components/Background";
 import Navbar from './_components/Navbar'
 import ModalContainer from "./modal-container";
+import ToastContainer from "./toast-container";
 
 export const metadata: Metadata = {
   title: "condev-ui",
@@ -24,6 +25,7 @@ export default function RootLayout({
           <Navbar />
           {children}
         </div>
+        <ToastContainer />
         <ModalContainer />
       </body>
     </html>

@@ -8,7 +8,7 @@ export default {
     "**/*.js",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.mjs"
+    "**/*.mjs",
   ],
   rules: {
     "block-no-empty": true,
@@ -25,9 +25,10 @@ export default {
           "variants",
           "responsive",
           "screen",
-          "layer"
-        ]
-      }
+          "layer",
+          "config",
+        ],
+      },
     ],
   },
 };

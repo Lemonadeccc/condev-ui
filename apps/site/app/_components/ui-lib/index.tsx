@@ -6,6 +6,7 @@ import { CdCheckbox } from '@/app/(main)/checkbox/cd-checkbox';
 import { CdModal } from '@/app/(main)/modal/cd-modal';
 import { CdButtonRadio } from '@/app/(main)/radio/cd-button-radio';
 import { CdRadio } from '@/app/(main)/radio/cd-radio';
+import { CdMessage } from '@/app/(main)/toast/message';
 
 
 
@@ -15,6 +16,7 @@ export {
   CdButton,
   CdButtonRadio,
   CdCheckbox,
+  CdMessage,
   CdModal,
   CdModalBox,
   CdRadio,
