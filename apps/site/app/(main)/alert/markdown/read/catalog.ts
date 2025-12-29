@@ -2,7 +2,7 @@
 export const catalogList = [
   {
     "level": 3,
-    "text": "Tailwind 实现参考"
+    "text": "基本用法"
   },
   {
     "level": 3,
