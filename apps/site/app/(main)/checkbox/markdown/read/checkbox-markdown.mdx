@@ -1,12 +1,4 @@
-import {
-  ImageTypography,
-  AvatarM,
-  CodeBlock,
-  H1,
-  Divide,
-  H3Sub,
-  Code,
-} from "@/app/_components/typography";
+import { H1, H3Sub, Code } from "@/app/_components/typography";
 import {
   BasicExample,
   CheckedExample,
@@ -14,42 +6,54 @@ import {
   IndeterminateExample,
 } from "./example";
 
-{/* ### 基础多选框 */}
+<H1 subheading="">Checkbox</H1>
+
+{/* ### 基本用法 */}
 
 <H3Sub
   sub={
     <>
-      <div className="mb-2">可以看到，我们的 <Code>checkbox</Code> 组件，主要有三种状态，分别是： <Code>default</Code>、 <Code>disabled</Code>、<Code>readonly</Code>。然后分别每种状态有选中和未选中的样式。 </div>
-      <div>需要注意，HTML 标准并不支持 <Code>readonly</Code> 属性，这是我们组件单独封装的。</div>
-    </>
-
-}
-
-> {'基础多选框'}</H3Sub>
-
-<BasicExample />
-
-{/* ### 受控按钮 */}
-
-<H3Sub
-  sub={
-    <>
-      通过 <Code>checked</Code> 属性控制是否选中
+      <div className="mb-2">
+        最简单的用法是直接渲染 <Code>CdCheckbox</Code>。你可以通过{" "}
+        <Code>checked</Code> 控制选中状态，通过 <Code>disabled</Code> 禁用交互。
+      </div>
+      <div className="text-white/70 text-[13px] leading-6">
+        注意：HTML 原生并没有 <Code>readonly</Code> 的多选框语义；这里的{" "}
+        <Code>readonly</Code> 是组件层的约定，用于“展示为可读但不允许修改”。
+      </div>
     </>
   }
 >
-  {"受控按钮"}
+  {"基本用法"}
 </H3Sub>
-<CheckedExample />
 
-{/* ###  多选框 Group */}
+<BasicExample />
+
+{/* ### 受控用法 */}
 
 <H3Sub
   sub={
     <>
-      将多个 <Code>checkbox</Code> 组件放在一个 <Code>checkbox-group</Code>{" "}
-      组件中，注意一定要设置 <Code>defaultValue</Code> 或者
-      <Code>value</Code> 属性才能实现多选框组的功能。
+      通过 <Code>checked</Code>（以及对应的 <Code>onChange</Code>
+      ）可以将状态交给外部维护，适用于表单联动、批量操作等场景。
+    </>
+  }
+>
+  {"受控用法"}
+</H3Sub>
+<CheckedExample />
+
+{/* ### 多选框组 */}
+
+<H3Sub
+  sub={
+    <>
+      将多个 <Code>CdCheckbox</Code> 放入 <Code>Checkbox.Group</Code>{" "}
+      中即可形成多选框组。
+      <div className="mt-2 text-white/70 text-[13px] leading-6">
+        <Code>defaultValue</Code> 用于非受控默认值；<Code>value</Code> +{" "}
+        <Code>onChange</Code> 用于受控模式。
+      </div>
     </>
   }
 >
@@ -57,15 +61,20 @@ import {
 </H3Sub>
 <GroupExample />
 
-{/* ###  半选 Group */}
+{/* ### 半选 / 全选 */}
 
 <H3Sub
   sub={
     <>
-      通过 <Code>indeterminate</Code> 属性可以实现半选效果
+      通过 <Code>indeterminate</Code> 可展示“部分选中”的视觉状态，常用于“全选 /
+      反选”场景。
+      <div className="mt-2 text-white/70 text-[13px] leading-6">
+        建议：当选中项数量为 0
+        时取消半选；当选中项数量等于总数时取消半选并设置全选；其余情况设置半选。
+      </div>
     </>
   }
 >
-  {"半选 Group"}
+  {"半选 / 全选"}
 </H3Sub>
 <IndeterminateExample />

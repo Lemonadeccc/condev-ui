@@ -22,14 +22,11 @@ import {
 
 <H3Sub
   sub={
-    <>
-      最简单的例子。<Code>切记</Code>一定要看 <Code>必读指南</Code>中
-      <Code>引入和使用 toast</Code>章节，了解如何引入
-      <Code>ToastProvider</Code>。
-    </>
-  }
->
-  {"基本用法"}
+    <></>
+}
+
+> {"基本用法"}
+
 </H3Sub>
 <BasicExample />
 
@@ -38,8 +35,8 @@ import {
 <H3Sub
   sub={
     <>
-      全局提示有 5 种不同的类型，分别为：<Code>info</Code>、<Code>success</Code>
-      、<Code>warning</Code>、<Code>error</Code>、<Code>loading</Code>
+      全局提示有 5 种不同的类型，分别为：<Code>info</Code>、<Code>success</Code>、
+      <Code>warning</Code>、<Code>error</Code>、<Code>loading</Code>
     </>
   }
 >
@@ -66,8 +63,7 @@ import {
 <H3Sub
   sub={
     <>
-      <Code>message</Code> 组件的位置完全可以自己定义，请在<Code>必读指南</Code>
-      里了解，配置位置的方式，以下的 <Code>message</Code>
+      <Code>message</Code> 组件的位置可自定义，以下的 <Code>message</Code>
       我们定位在了右下角
     </>
   }
@@ -75,7 +71,7 @@ import {
   {"位置"}
 </H3Sub>
 
-以下就是配置 `ToastProvider` 的代码，注意
+以下为配置 `ToastProvider` 的代码
 
 - `bottom-28`(定向到底部)，`items-end pr-12`(定位到右边)，所以就是 `右下方`
 - 并且 `direction` 设为 `bottom-to-top` ，所以就是从下往上弹出

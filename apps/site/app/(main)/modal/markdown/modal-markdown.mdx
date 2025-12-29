@@ -20,17 +20,7 @@ import {
 
 {/* ### 基本用法 */}
 
-<H3Sub
-  sub={
-    <>
-      最简单的例子。<Code>切记</Code>一定要看 <Code>必读指南</Code>中
-      <Code>如何封装 modal</Code>，已经如何引入
-      <Code>ModalProvider</Code>。这样你可以自定义自己喜欢的 <Code>modal</Code> 样式。这里的案例仅仅是一系列例子而已。
-    </>
-  }
->
-  {"基本用法"}
-</H3Sub>
+<H3Sub sub={<></>}>{"基本用法"}</H3Sub>
 <BasicExample />
 
 {/* ### 自定义尺寸 */}
@@ -38,8 +28,8 @@ import {
 <H3Sub
   sub={
     <>
-      你可以通过自定义 <Code>modal</Code> 的尺寸。当然你也可以自定义一个{" "}
-      <Code>modal</Code> 框，然后定义传参内容）
+      通过自定义 <Code>modal</Code> 的尺寸。也可自定义一个 <Code>modal</Code>{" "}
+      框，然后定义传参内容
     </>
   }
 >
@@ -52,7 +42,7 @@ import {
 <H3Sub
   sub={
     <>
-      你可以通过自定义 <Code>modal</Code> 样式来设置内部滚动。
+      自定义 <Code>modal</Code> 样式来设置内部滚动。
     </>
   }
 >
@@ -72,7 +62,7 @@ import {
 <H3Sub
   sub={
     <>
-      默认情况下，弹窗会挂载到 <Code>body</Code> 上。你可以通过自定义{" "}
+      默认情况下，弹窗挂载到 <Code>body</Code> 上。你可以通过自定义{" "}
       <Code>attach</Code> 来改变挂载位置。<Code>attach</Code>{" "}
       是一个字符串，组件内部使用 <Code>document.querySelector(attach)</Code>{" "}
       来获取挂载位置。

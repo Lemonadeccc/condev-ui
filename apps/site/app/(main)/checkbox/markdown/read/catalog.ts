@@ -2,18 +2,18 @@
 export const catalogList = [
   {
     "level": 3,
-    "text": "基础多选框"
+    "text": "基本用法"
   },
   {
     "level": 3,
-    "text": "受控按钮"
+    "text": "受控用法"
   },
   {
     "level": 3,
-    "text": "多选框 Group"
+    "text": "多选框组"
   },
   {
     "level": 3,
-    "text": "半选 Group"
+    "text": "半选 / 全选"
   }
 ];
